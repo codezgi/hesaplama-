@@ -1,58 +1,81 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Hesaplama Merkezi — Tasarım Sistemi
-   Sade, hızlı, güven veren. Rakiplerden farkımız: temiz, reklamsız hissi,
-   anlık hesaplama ve okunabilir tipografi.
+   Hesaplama Merkezi — Modern & Sade Tasarım Sistemi
+   Nötr slate zemin + tek zarif accent (deep teal). Fintech/analitik hissi:
+   güven, hassasiyet, hız. Gereksiz renk gürültüsü yok.
 --------------------------------------------------------------------------- */
 
 :root {
-  /* Sıcak, samimi palet: bej + beyaz + yeşil + pastel */
-  --bg: #faf6ef;          /* sıcak krem/bej */
+  --bg: #fafafa;
   --surface: #ffffff;
-  --surface-2: #f4ede1;   /* açık bej */
-  --border: #ebe2d3;
-  --text: #2c2a24;        /* sıcak koyu kahve-siyah */
-  --text-muted: #857c6c;
-  --primary: #2f9e6f;     /* samimi yeşil */
-  --primary-hover: #268a60;
-  --primary-soft: #e7f4ec;
-  --accent: #e08a5f;      /* sıcak terracotta/şeftali pastel */
-  --accent-soft: #fbeee4;
-  --ring: rgba(47, 158, 111, 0.28);
-  --shadow: 0 1px 1px rgba(70, 55, 30, 0.04);
-  --shadow-lg: 0 2px 4px rgba(70, 55, 30, 0.05), 0 12px 28px rgba(70, 55, 30, 0.08);
+  --surface-2: #f4f5f7;
+  --surface-3: #eceef1;
+  --border: #e5e7eb;
+  --border-strong: #d5d8dd;
+  --text: #0f1720;
+  --text-muted: #64707d;
+  --text-soft: #8a95a2;
+
+  --primary: #0f766e;
+  --primary-hover: #0b5f58;
+  --primary-soft: #e7f3f1;
+  --primary-strong: #064e47;
+
+  --accent: #f59e0b;
+  --accent-soft: #fef4e2;
+
+  --ring: rgba(15, 118, 110, 0.22);
+  --shadow-xs: 0 1px 2px rgba(15, 23, 32, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 32, 0.05), 0 1px 3px rgba(15, 23, 32, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 32, 0.06), 0 2px 4px -1px rgba(15, 23, 32, 0.04);
+  --shadow-lg: 0 12px 28px -8px rgba(15, 23, 32, 0.12), 0 4px 10px -2px rgba(15, 23, 32, 0.06);
+
   --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
 }
 
 .dark {
-  /* Sıcak koyu tema — soğuk mavi-siyah değil, ılık kahve-siyah */
-  --bg: #191510;
-  --surface: #221d17;
-  --surface-2: #2c261e;
-  --border: #3a3226;
-  --text: #f3ede2;
-  --text-muted: #ab9f8b;
-  --primary: #46b586;
-  --primary-hover: #55c093;
-  --primary-soft: #1d2f26;
-  --accent: #e8a07a;
-  --accent-soft: #2f241b;
-  --ring: rgba(70, 181, 134, 0.35);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.45), 0 24px 50px rgba(0, 0, 0, 0.5);
+  --bg: #0a0d12;
+  --surface: #121620;
+  --surface-2: #181d29;
+  --surface-3: #202634;
+  --border: #262d3d;
+  --border-strong: #313a4d;
+  --text: #eef1f6;
+  --text-muted: #97a0af;
+  --text-soft: #6d7787;
+
+  --primary: #2dd4bf;
+  --primary-hover: #14b8a6;
+  --primary-soft: #0f2724;
+  --primary-strong: #99f6e4;
+
+  --accent: #fbbf24;
+  --accent-soft: #241a08;
+
+  --ring: rgba(45, 212, 191, 0.28);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 28px -8px rgba(0, 0, 0, 0.55);
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  --color-text-soft: var(--text-soft);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-primary-soft: var(--primary-soft);
+  --color-primary-strong: var(--primary-strong);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-sans);
@@ -74,11 +97,13 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-h1, h2, h3 {
-  line-height: 1.2;
-  letter-spacing: -0.011em;
+h1, h2, h3, h4 {
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--text);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -95,31 +120,62 @@ input[type="number"] {
     width: 100%;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 9px;
+    border-radius: 10px;
     padding: 0.7rem 0.9rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text);
-    transition: border-color 0.15s, box-shadow 0.15s;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
     outline: none;
   }
   .field:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--ring);
+    box-shadow: 0 0 0 4px var(--ring);
   }
+  .field::placeholder { color: var(--text-soft); }
+
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-xs);
   }
+
   .btn-primary {
     background: var(--primary);
     color: #fff;
-    border-radius: 9px;
+    border-radius: 10px;
     font-weight: 600;
-    transition: background 0.15s;
+    transition: background 0.15s, transform 0.05s;
   }
-  .btn-primary:hover {
-    background: var(--primary-hover);
+  .btn-primary:hover { background: var(--primary-hover); }
+  .btn-primary:active { transform: translateY(1px); }
+
+  .btn-ghost {
+    color: var(--text);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: background 0.15s, border-color 0.15s;
   }
+  .btn-ghost:hover { background: var(--surface-2); border-color: var(--border-strong); }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .chip:hover { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
+
+  .link-underline {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--primary) 35%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+  .link-underline:hover { text-decoration-color: var(--primary); }
 }

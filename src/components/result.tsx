@@ -27,7 +27,7 @@ export function ResultHero({
 }
 
 /** Sonuç satırı (etiket + değer) */
-export function ResultRow({ label, value }: { label: string; value: ReactNode }) {
+export function ResultRow({ label, value }: { label: ReactNode; value: ReactNode }) {
   return (
     <div className="flex items-center justify-between border-b border-border py-2.5 last:border-0">
       <span className="text-sm text-text-muted">{label}</span>

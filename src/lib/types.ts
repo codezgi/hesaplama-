@@ -24,6 +24,8 @@ export interface Calculator {
   formula?: string;
   /** Kaynak/uyarı notu (özellikle mevzuata bağlı hesaplar için) */
   note?: string;
+  /** Sık sorulan sorular — FAQPage JSON-LD üretilir (Google AI Overviews için) */
+  faqs?: { q: string; a: string }[];
   /** active: çalışıyor, soon: yakında */
   status: "active" | "soon";
 }

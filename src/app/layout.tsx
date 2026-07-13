@@ -13,16 +13,54 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hesaplamamerkezi.com"),
   title: {
-    default: "Hesaplama Merkezi — Maaş, KDV, Kredi ve Döviz Hesaplama",
+    default: "Hesaplama Merkezi — Maaş, KDV, Kredi, Döviz ve 100+ Hesaplama",
     template: "%s | Hesaplama Merkezi",
   },
   description:
-    "Maaş, KDV, kredi taksiti, döviz, altın ve not ortalaması hesaplama araçları. Döviz ve altın verileri güncel.",
-  keywords: ["hesaplama", "hesaplayıcı", "kdv hesaplama", "kredi hesaplama", "bmi", "gpa"],
+    "Türkiye'nin en kapsamlı Türkçe hesaplama merkezi: maaş, KDV, kredi taksiti, döviz, altın, not ortalaması, TYT/KPSS ve 100+ hesaplayıcı. Canlı TCMB ve piyasa verileri.",
+  keywords: [
+    "hesaplama", "hesaplayıcı", "kdv hesaplama", "kredi hesaplama", "bmi",
+    "gpa", "brüt net maaş", "tyt puan", "kpss", "döviz çevirici", "altın hesaplama",
+    "kıdem tazminatı", "gelir vergisi", "damga vergisi",
+  ],
+  authors: [{ name: "Hesaplama Merkezi" }],
+  creator: "Hesaplama Merkezi",
+  publisher: "Hesaplama Merkezi",
+  applicationName: "Hesaplama Merkezi",
+  category: "utilities",
   openGraph: {
     type: "website",
     locale: "tr_TR",
     siteName: "Hesaplama Merkezi",
+    title: "Hesaplama Merkezi — Türkiye'nin En Kapsamlı Hesaplama Aracı",
+    description: "Maaş, KDV, kredi, döviz, altın ve 100+ hesaplayıcı. Canlı TCMB kurları.",
+    url: "https://hesaplamamerkezi.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hesaplama Merkezi",
+    description: "Türkiye'nin en kapsamlı Türkçe hesaplama merkezi.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+    types: {
+      "text/plain": "/llms.txt",
+    },
+  },
+  other: {
+    // AI/LLM ilkeleri — içerik AI arama sonuçlarında görünmeye açıktır
+    "robots-ai": "index, allow-training",
   },
 };
 

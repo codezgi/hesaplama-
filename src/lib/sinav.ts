@@ -147,6 +147,117 @@ export function hesaplaYds(dogru: number, yanlis: number): { net: number; puan: 
   return { net: n, puan: (n / 80) * 100 };
 }
 
+/* ------------------------------ TUS ------------------------------ */
+export interface TusGirdi {
+  tbtD: number; tbtY: number; // Temel Bilimler 120 soru
+  ktbtD: number; ktbtY: number; // Klinik Bilimler 120 soru
+}
+/** TUS puan tahmini. K.puanı: TBT %50 + KTBT %50. */
+export function hesaplaTus(g: TusGirdi): {
+  tbtNet: number;
+  ktbtNet: number;
+  tbtPuan: number;
+  ktbtPuan: number;
+  kPuan: number;
+} {
+  const t = net(g.tbtD, g.tbtY);
+  const k = net(g.ktbtD, g.ktbtY);
+  // TUS ham puan yaklaşık = 30 + net × 0.6 (basit tahmini)
+  const tbtPuan = 30 + t * 0.6;
+  const ktbtPuan = 30 + k * 0.6;
+  return {
+    tbtNet: t,
+    ktbtNet: k,
+    tbtPuan,
+    ktbtPuan,
+    kPuan: (tbtPuan + ktbtPuan) / 2,
+  };
+}
+
+/* ------------------------------ YKS-DİL ------------------------------ */
+export interface YksDilGirdi {
+  dilD: number; dilY: number; // 80
+  tytD: number; tytY: number; // Bunun için TYT ham puanı da gerekli
+}
+/** YKS Yabancı Dil puan tahmini: Dil × 3 + TYT ham × 0,4 */
+export function hesaplaYksDil(dilD: number, dilY: number, tytHam: number) {
+  const dilNet = net(dilD, dilY);
+  const dilPuan = 100 + dilNet * 3;
+  const yerlestirme = tytHam * 0.4 + dilPuan * 0.6;
+  return { dilNet, dilPuan, yerlestirme };
+}
+
+/* ------------------------------ İYÖS ------------------------------ */
+/** İYÖS (Yabancı öğrenci) yaklaşık: 80 soru, doğru sayısı ile puan. */
+export function hesaplaIyos(dogru: number, yanlis: number) {
+  const n = net(dogru, yanlis);
+  return { net: n, puan: 100 + n * 5 };
+}
+
+/* ------------------------------ EKPSS ------------------------------ */
+export interface EkpssGirdi {
+  gyD: number; gyY: number; // Genel Yetenek 30
+  gkD: number; gkY: number; // Genel Kültür 30
+}
+/** EKPSS (Engelli KPSS) — 3 puan türü tahmini. */
+export function hesaplaEkpss(g: EkpssGirdi): { gyNet: number; gkNet: number; p1: number; p2: number; p3: number } {
+  const gy = net(g.gyD, g.gyY);
+  const gk = net(g.gkD, g.gkY);
+  return {
+    gyNet: gy, gkNet: gk,
+    p1: 50 + (gy + gk) * 1.5,
+    p2: 50 + (gy * 0.6 + gk * 0.4) * 2.5,
+    p3: 50 + (gy * 0.4 + gk * 0.6) * 2.5,
+  };
+}
+
+/* ------------------------------ PMYO ------------------------------ */
+/**
+ * PMYO (Polis Meslek Yüksekokulu) taban puanı YKS/TYT üzerinden hesaplanır.
+ * Ek olarak fiziksel yeterlilik ve mülakat puanı %30 ağırlıklı.
+ */
+export function hesaplaPmyo(
+  tytPuan: number,
+  fizikselYeterlilikPuan: number,
+  mulakatPuan: number,
+): { yerlestirmePuan: number; ortalamaFiziksel: number; genelBasari: string } {
+  // Yerleştirme: TYT ham × 0,7 + Fiziksel × 0,15 + Mülakat × 0,15
+  const yerlestirme = tytPuan * 0.7 + fizikselYeterlilikPuan * 0.15 + mulakatPuan * 0.15;
+  const ortFiziksel = (fizikselYeterlilikPuan + mulakatPuan) / 2;
+  let basari: string;
+  if (yerlestirme >= 350) basari = "Yüksek şans";
+  else if (yerlestirme >= 300) basari = "Orta şans";
+  else basari = "Düşük şans";
+  return { yerlestirmePuan: yerlestirme, ortalamaFiziksel: ortFiziksel, genelBasari: basari };
+}
+
+/* ------------------------------ MSÜ ------------------------------ */
+export interface MsuGirdi {
+  turkceD: number; turkceY: number; // 40
+  sosyalD: number; sosyalY: number; // 20
+  matD: number; matY: number; // 40
+  fenD: number; fenY: number; // 20
+}
+/** MSÜ (Milli Savunma Üniversitesi) puan tahmini — TYT-benzeri yapı. */
+export function hesaplaMsu(g: MsuGirdi): { toplamNet: number; hamPuan: number } {
+  const t = net(g.turkceD, g.turkceY);
+  const s = net(g.sosyalD, g.sosyalY);
+  const m = net(g.matD, g.matY);
+  const f = net(g.fenD, g.fenY);
+  return { toplamNet: t + s + m + f, hamPuan: 100 + t * 3.3 + s * 3.4 + m * 3.3 + f * 3.4 };
+}
+
+/* ------------------------------ EHLİYET SINAVI ------------------------------ */
+/** Sürücü ehliyet teori sınavı: 50 sorudan 35 doğru geçme sınırı. */
+export function ehliyetSonuc(dogru: number): { basarili: boolean; puan: number; kalan: number } {
+  const puan = (dogru / 50) * 100;
+  return {
+    basarili: dogru >= 35,
+    puan,
+    kalan: Math.max(0, 35 - dogru),
+  };
+}
+
 /* ------------------------------ ALES ------------------------------ */
 export interface AlesGirdi {
   sayisalD: number; sayisalY: number; // 50

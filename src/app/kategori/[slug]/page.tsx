@@ -38,20 +38,25 @@ export default async function KategoriPage({
   const Icon = cat.icon;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <nav className="mb-6 flex items-center gap-1 text-sm text-text-muted">
         <Link href="/" className="hover:text-primary">Anasayfa</Link>
+        <ChevronRight className="h-4 w-4" />
+        <Link href="/#kategoriler" className="hover:text-primary">Kategoriler</Link>
         <ChevronRight className="h-4 w-4" />
         <span className="text-text">{cat.title}</span>
       </nav>
 
-      <div className="flex items-center gap-4">
-        <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ${cat.tint}`}>
+      <div className="flex items-start gap-5">
+        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary-soft text-primary">
           <Icon className="h-7 w-7" />
         </span>
         <div>
-          <h1 className="text-2xl font-bold text-text sm:text-3xl">{cat.title}</h1>
-          <p className="mt-1 text-text-muted">{cat.description}</p>
+          <h1 className="text-3xl font-bold tracking-tight text-text sm:text-4xl">{cat.title}</h1>
+          <p className="mt-2 max-w-2xl text-text-muted">{cat.description}</p>
+          <p className="mt-2 text-sm text-text-soft">
+            {calcs.filter((c) => c.status === "active").length} aktif hesaplayıcı
+          </p>
         </div>
       </div>
 

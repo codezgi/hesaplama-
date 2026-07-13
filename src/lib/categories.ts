@@ -16,6 +16,9 @@ import {
   ShieldCheck,
   Plane,
   Sparkles,
+  Scale,
+  Dices,
+  Atom,
 } from "lucide-react";
 import type { Category } from "./types";
 
@@ -110,6 +113,27 @@ export const categories: Category[] = [
     description: "DASK, kasko, trafik sigortası basamak hesaplayıcıları.",
     icon: ShieldCheck,
     tint: "text-lime-600 bg-lime-50 dark:bg-lime-500/10",
+  },
+  {
+    slug: "hukuki",
+    title: "Hukuki Hesaplamalar",
+    description: "Yasal faiz, arabuluculuk, tapu harcı ve kira artışı hesapları.",
+    icon: Scale,
+    tint: "text-stone-600 bg-stone-100 dark:bg-stone-500/10",
+  },
+  {
+    slug: "sans-karar",
+    title: "Şans & Karar Araçları",
+    description: "Karar çarkı, yazı-tura, zar atma, ne yiyeyim? — eğlenceli karar verme.",
+    icon: Dices,
+    tint: "text-pink-600 bg-pink-50 dark:bg-pink-500/10",
+  },
+  {
+    slug: "bilimsel",
+    title: "Bilimsel & Kompleks Hesaplamalar",
+    description: "Formül ifade hesaplayıcı, denklem sistemi, matris, fizik ve kimya.",
+    icon: Atom,
+    tint: "text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10",
   },
   {
     slug: "seyahat",

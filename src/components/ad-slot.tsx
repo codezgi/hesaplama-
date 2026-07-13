@@ -4,7 +4,15 @@
    diye min-height sabittir. Gerçek reklam kodu bağlanınca placeholder yerine
    <ins class="adsbygoogle"> gelir.
 
-   Kullanım: <AdSlot format="leaderboard" />
+   Yerleşim rehberi (sitedeki tüm reklam alanları):
+   - HESAPLAYICI SAYFASI (5 slot):
+     * üst-leaderboard (H1 altı)
+     * in-article (hesap sonucu altı)
+     * alt-leaderboard (İlgili hesaplayıcılar sonrası)
+     * yan-sidebar (masaüstünde sağ sticky)
+     * yan-rectangle (yan-sidebar altında)
+   - KATEGORİ SAYFASI (2 slot): üst + alt leaderboard
+   - ANA SAYFA (1 slot): bölümler arası leaderboard
 --------------------------------------------------------------------------- */
 
 type AdFormat = "leaderboard" | "rectangle" | "sidebar" | "in-article";
@@ -26,10 +34,14 @@ export function AdSlot({
   const b = boyut[format];
   return (
     <div className={`mx-auto w-full ${b.maxW ?? ""} ${className}`}>
+      <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-text-muted/60">
+        <span>Reklam</span>
+        <span>{b.etiket}</span>
+      </div>
       <div
         data-ad-slot={format}
         aria-hidden="true"
-        className={`flex ${b.minH} w-full items-center justify-center rounded-xl border border-dashed border-border bg-surface-2/50 text-center`}
+        className={`mt-1 flex ${b.minH} w-full items-center justify-center rounded-xl border border-dashed border-border bg-surface-2/40 text-center`}
       >
         {/*
           AdSense bağlanınca burası ile değiştirilir:
@@ -37,8 +49,8 @@ export function AdSlot({
                data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX"
                data-ad-format="auto" data-full-width-responsive="true" />
         */}
-        <span className="select-none text-xs font-medium uppercase tracking-wide text-text-muted/70">
-          Reklam · {b.etiket}
+        <span className="select-none text-xs font-medium text-text-muted/60">
+          Reklam alanı
         </span>
       </div>
     </div>

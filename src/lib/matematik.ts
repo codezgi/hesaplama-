@@ -245,6 +245,150 @@ export function rastgeleSayilar(min: number, max: number, adet: number, tekrarsi
   return Array.from({ length: adet }, () => lo + Math.floor(Math.random() * aralik));
 }
 
+/* ------------------------ 2. DERECEDEN DENKLEM ------------------------ */
+export interface DenklemSonuc {
+  diskriminant: number;
+  gerceklKok: number;
+  x1: number | null;
+  x2: number | null;
+  x1Imag?: string;
+  x2Imag?: string;
+  tepe: { x: number; y: number };
+}
+
+/** ax² + bx + c = 0 denklemini çözer. */
+export function ikinciDereceDenklem(a: number, b: number, c: number): DenklemSonuc {
+  if (a === 0) {
+    // Doğrusal: bx + c = 0
+    return {
+      diskriminant: 0,
+      gerceklKok: b === 0 ? 0 : 1,
+      x1: b === 0 ? null : -c / b,
+      x2: null,
+      tepe: { x: 0, y: c },
+    };
+  }
+  const d = b * b - 4 * a * c;
+  const tepeX = -b / (2 * a);
+  const tepeY = a * tepeX * tepeX + b * tepeX + c;
+
+  if (d > 0) {
+    const s = Math.sqrt(d);
+    return {
+      diskriminant: d,
+      gerceklKok: 2,
+      x1: (-b + s) / (2 * a),
+      x2: (-b - s) / (2 * a),
+      tepe: { x: tepeX, y: tepeY },
+    };
+  }
+  if (d === 0) {
+    return {
+      diskriminant: 0,
+      gerceklKok: 1,
+      x1: -b / (2 * a),
+      x2: null,
+      tepe: { x: tepeX, y: tepeY },
+    };
+  }
+  // Kompleks kökler
+  const s = Math.sqrt(-d);
+  return {
+    diskriminant: d,
+    gerceklKok: 0,
+    x1: null,
+    x2: null,
+    x1Imag: `${(-b / (2 * a)).toFixed(4)} + ${(s / (2 * a)).toFixed(4)}i`,
+    x2Imag: `${(-b / (2 * a)).toFixed(4)} − ${(s / (2 * a)).toFixed(4)}i`,
+    tepe: { x: tepeX, y: tepeY },
+  };
+}
+
+/* ------------------------ LOTO / ÇEKİLİŞ İHTİMALİ ------------------------ */
+/** Bir çekilişte belirli sayıda kupon bileti için tam bilme olasılığı: C(N,K) */
+export function lotoOlasilik(havuz: number, secilen: number) {
+  const komb = kombinasyon(havuz, secilen);
+  return {
+    tamBilme1e: komb, // 1 kupon için 1'/komb şans
+    tamBilmeYuzde: (1 / komb) * 100,
+  };
+}
+
+/* ---------------------------- YAŞ PROBLEMİ ---------------------------- */
+/**
+ * "Ali'nin yaşı Ayşe'nin yaşının k katı" tipi problemler için basit çözücü.
+ * x = kişi1 yaşı, y = kişi2 yaşı; kat farkı ve yaş farkı verilir → çözer.
+ */
+export function yasProblemi(katFark: number, yasFark: number) {
+  // Ali = k × Ayşe, Ali − Ayşe = fark → Ayşe = fark/(k−1)
+  if (katFark === 1) return { kucuk: NaN, buyuk: NaN, mesaj: "Kat farkı 1 olamaz" };
+  const kucuk = yasFark / (katFark - 1);
+  return { kucuk, buyuk: kucuk * katFark };
+}
+
+/* ---------------------------- PI HESABI (Monte Carlo) ---------------------------- */
+export function piMonteCarlo(deneme: number) {
+  let ic = 0;
+  for (let i = 0; i < deneme; i++) {
+    const x = Math.random();
+    const y = Math.random();
+    if (x * x + y * y <= 1) ic++;
+  }
+  return { pi: (4 * ic) / deneme, gercek: Math.PI, hata: Math.abs((4 * ic) / deneme - Math.PI) };
+}
+
+/* ---------------------------- SAYI → TÜRKÇE YAZI ---------------------------- */
+const BIRLER = ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"];
+const ONLAR = ["", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"];
+const BASAMAK = ["", "bin", "milyon", "milyar", "trilyon", "katrilyon"];
+
+function ucBasamak(n: number): string {
+  if (n === 0) return "";
+  let s = "";
+  const y = Math.floor(n / 100);
+  const kalan = n % 100;
+  if (y > 0) {
+    s += (y === 1 ? "" : BIRLER[y] + " ") + "yüz";
+    if (kalan > 0) s += " ";
+  }
+  const o = Math.floor(kalan / 10);
+  const b = kalan % 10;
+  if (o > 0) {
+    s += ONLAR[o];
+    if (b > 0) s += " ";
+  }
+  if (b > 0) s += BIRLER[b];
+  return s;
+}
+
+/** Sayıyı Türkçe yazılı olarak ifade eder. */
+export function sayiyiYazyaCevir(sayi: number): string {
+  if (!Number.isFinite(sayi)) return "";
+  if (sayi === 0) return "sıfır";
+  const negatif = sayi < 0;
+  let tam = Math.floor(Math.abs(sayi));
+  const kesir = Math.round((Math.abs(sayi) - tam) * 100);
+
+  const parcalar: string[] = [];
+  let i = 0;
+  while (tam > 0) {
+    const uc = tam % 1000;
+    if (uc > 0) {
+      let str = ucBasamak(uc);
+      if (i === 1 && uc === 1) str = ""; // "bir bin" değil, "bin"
+      const bas = BASAMAK[i];
+      parcalar.unshift((str + (bas ? " " + bas : "")).trim());
+    }
+    tam = Math.floor(tam / 1000);
+    i++;
+  }
+  let sonuc = parcalar.join(" ");
+  if (kesir > 0) {
+    sonuc += ` virgül ${ucBasamak(kesir)}`;
+  }
+  return (negatif ? "eksi " : "") + sonuc.trim();
+}
+
 export function tabanCevir(deger: string, fromTaban: number, toTaban: number): string | null {
   const temiz = deger.trim().toLowerCase();
   if (!temiz) return null;

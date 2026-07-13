@@ -351,6 +351,93 @@ export function smmNetBrut(net: number, kdvOran = 20, stopajOran = 20): SmmDetay
   };
 }
 
+/* --------------------------- SÜT İZNİ --------------------------- */
+/**
+ * Süt izni (İş K. m.74/7): Kadın işçiye doğumdan sonra 1 yıl süreyle günde
+ * toplam 1,5 saat süt izni verilir. Bu süre çalışma süresinden sayılır.
+ * Devlet memurunda (657 s.K.): İlk 6 ay günde 3 saat, 6-12 ay günde 1,5 saat.
+ */
+export interface SutIzniDetay {
+  gunlukSaat: number;
+  gunlukDakika: number;
+  toplamGunSaat: number;
+  aciklama: string;
+}
+export function sutIzniHesapla(
+  memur: boolean,
+  cocukAyi: number,
+): SutIzniDetay {
+  if (cocukAyi >= 12) return { gunlukSaat: 0, gunlukDakika: 0, toplamGunSaat: 0, aciklama: "12 ayı geçen çocuk için süt izni yoktur." };
+  const gunluk = memur ? (cocukAyi < 6 ? 3 : 1.5) : 1.5;
+  return {
+    gunlukSaat: Math.floor(gunluk),
+    gunlukDakika: Math.round((gunluk - Math.floor(gunluk)) * 60),
+    toplamGunSaat: gunluk,
+    aciklama: memur
+      ? cocukAyi < 6 ? "İlk 6 ay: günde 3 saat (657 s.K.)" : "6-12 ay: günde 1,5 saat (657 s.K.)"
+      : "İş K. m.74: doğum sonrası 1 yıl boyunca günde 1,5 saat",
+  };
+}
+
+/* --------------------------- YOLLUK (HARCIRAH) --------------------------- */
+/**
+ * Kamu görevlisi harcırahı = Gündelik × Gün + Konaklama + Yol.
+ * Gündelik miktar 6245 s.K. ekli cetvele göre kadro/görev derecesine değişir.
+ * UI'de kullanıcı günlük değerini girer.
+ */
+export function yolluk(gunluk: number, gun: number, konaklama = 0, yol = 0) {
+  const gundelikToplam = gunluk * gun;
+  return {
+    gundelikToplam,
+    toplam: gundelikToplam + konaklama + yol,
+  };
+}
+
+/* --------------------------- DOĞUM İZNİ --------------------------- */
+/**
+ * 4857 İş K. ve 657 Devlet Memurları K.'na göre kadın işçi doğum izni:
+ * - Doğum öncesi 8 hafta + Doğum sonrası 8 hafta = 16 hafta
+ * - Çoğul gebelikte doğum öncesi 10 hafta (18 hafta toplam)
+ * - Erken doğum halinde kullanılmayan öncesi süre sonrasına eklenir
+ * - Baba için 5 gün (özel sektör 5 gün, memur 10 gün)
+ */
+export interface DogumIzni {
+  ebeveyn: "anne" | "baba";
+  toplamGun: number;
+  hafta: number;
+  ayrinti: string[];
+}
+
+export function dogumIzniHesapla(
+  ebeveyn: "anne" | "baba",
+  cogul: boolean,
+  memur: boolean,
+): DogumIzni {
+  if (ebeveyn === "baba") {
+    const gun = memur ? 10 : 5;
+    return {
+      ebeveyn,
+      toplamGun: gun,
+      hafta: gun / 7,
+      ayrinti: [`Baba için ücretli izin: ${gun} gün`, memur ? "657 Devlet Memurları Kanunu" : "4857 İş Kanunu m.104"],
+    };
+  }
+  const oncesi = cogul ? 10 : 8;
+  const sonrasi = 8;
+  const gun = (oncesi + sonrasi) * 7;
+  return {
+    ebeveyn,
+    toplamGun: gun,
+    hafta: oncesi + sonrasi,
+    ayrinti: [
+      `Doğum öncesi: ${oncesi} hafta${cogul ? " (çoğul gebelik)" : ""}`,
+      `Doğum sonrası: ${sonrasi} hafta`,
+      `Toplam: ${oncesi + sonrasi} hafta = ${gun} gün`,
+      "Erken doğumda kullanılmayan öncesi süre sonrasına eklenir.",
+    ],
+  };
+}
+
 /* --------------------------- İŞSİZLİK MAAŞI --------------------------- */
 export interface IssizlikDetay {
   aylikNet: number;

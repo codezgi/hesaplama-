@@ -85,11 +85,24 @@ export default async function HesaplamaPage({
             },
           ]
         : []),
+      ...(calc.faqs && calc.faqs.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${url}#faq`,
+              mainEntity: calc.faqs.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+          ]
+        : []),
     ],
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Breadcrumb */}
@@ -105,6 +118,9 @@ export default async function HesaplamaPage({
         <span className="text-text">{calc.title}</span>
       </nav>
 
+      {/* İki kolonlu düzen: sol içerik + sağ yan reklam kolonu (lg+) */}
+      <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-8">
+        <div className="min-w-0">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-text sm:text-3xl">{calc.title}</h1>
         <p className="mt-2 text-text-muted">{calc.description}</p>
@@ -165,6 +181,24 @@ export default async function HesaplamaPage({
         </section>
       )}
 
+      {/* Sık sorulan sorular */}
+      {calc.faqs && calc.faqs.length > 0 && (
+        <section className="mt-10">
+          <h2 className="mb-4 text-lg font-bold text-text">Sık Sorulan Sorular</h2>
+          <div className="space-y-3">
+            {calc.faqs.map((f, i) => (
+              <details key={i} className="group rounded-xl border border-border bg-surface p-4">
+                <summary className="cursor-pointer font-medium text-text list-none flex items-center justify-between">
+                  <span>{f.q}</span>
+                  <span className="ml-3 shrink-0 text-primary transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <p className="mt-3 text-text-muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* İlgili hesaplayıcılar */}
       {related.length > 0 && (
         <section className="mt-10">
@@ -179,6 +213,16 @@ export default async function HesaplamaPage({
 
       {/* Reklam — sayfa altı */}
       <AdSlot format="leaderboard" className="mt-10" />
+        </div>
+
+        {/* Yan reklam kolonu (lg+) — sticky ile kaydırırken görünürlüğü korur */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-4">
+            <AdSlot format="sidebar" />
+            <AdSlot format="rectangle" />
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
