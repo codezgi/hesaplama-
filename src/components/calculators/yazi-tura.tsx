@@ -7,11 +7,13 @@ export function YaziTuraHesaplayici() {
   const [sonuc, setSonuc] = useState<"yazi" | "tura" | null>(null);
   const [donuyor, setDonuyor] = useState(false);
   const [istatistik, setIstatistik] = useState({ yazi: 0, tura: 0 });
+  const [donus, setDonus] = useState({ y: 1260, x: 900 });
 
   function at() {
     if (donuyor) return;
     setDonuyor(true);
     setSonuc(null);
+    setDonus({ y: 1080 + Math.random() * 360, x: 720 + Math.random() * 360 });
     setTimeout(() => {
       const s = Math.random() < 0.5 ? "yazi" : "tura";
       setSonuc(s);
@@ -31,7 +33,7 @@ export function YaziTuraHesaplayici() {
             style={{
               transformStyle: "preserve-3d",
               transform: donuyor
-                ? `rotateY(${1080 + (Math.random() * 360)}deg) rotateX(${720 + (Math.random() * 360)}deg)`
+                ? `rotateY(${donus.y}deg) rotateX(${donus.x}deg)`
                 : sonuc === "yazi" ? "rotateY(0deg)" : sonuc === "tura" ? "rotateY(180deg)" : "rotateY(0deg)",
               background: "radial-gradient(circle at 30% 30%, #f5c948, #d19c25)",
               display: "flex", alignItems: "center", justifyContent: "center",

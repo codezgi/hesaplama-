@@ -57,7 +57,7 @@ export function KonutKredisiHesaplayici() {
           <ResultRow label="Toplam faiz" value={formatTL(r.toplamFaiz)} />
         </div>
         <div className="rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">
-          Konut değerinin <strong className="text-text">%{formatNumber((krediTutari / (b || 1)) * 100, 0)}</strong>'i kredilendiriliyor. Sonuçlar bilgilendirme amaçlıdır; masraf ve sigortalar dahil değildir.
+          Konut değerinin <strong className="text-text">%{formatNumber((krediTutari / (b || 1)) * 100, 0)}</strong>&apos;i kredilendiriliyor. Sonuçlar bilgilendirme amaçlıdır; masraf ve sigortalar dahil değildir.
         </div>
       </div>
     </div>

@@ -99,11 +99,11 @@ export function TurevIntegralGrafikHesaplayici() {
       <div className="flex flex-wrap gap-4 text-sm">
         <label className="flex items-center gap-2 text-text">
           <input type="checkbox" checked={gostFprime} onChange={(e) => setGostFprime(e.target.checked)} />
-          <span className="inline-block h-3 w-4 rounded bg-accent" /> f'(x) türev
+          <span className="inline-block h-3 w-4 rounded bg-accent" /> f&apos;(x) türev
         </label>
         <label className="flex items-center gap-2 text-text">
           <input type="checkbox" checked={gostFpp} onChange={(e) => setGostFpp(e.target.checked)} />
-          <span className="inline-block h-3 w-4 rounded bg-purple-500" /> f''(x) 2. türev
+          <span className="inline-block h-3 w-4 rounded bg-purple-500" /> f&apos;&apos;(x) 2. türev
         </label>
         <label className="flex items-center gap-2 text-text">
           <input type="checkbox" checked={integrGoster} onChange={(e) => setIntegrGoster(e.target.checked)} />

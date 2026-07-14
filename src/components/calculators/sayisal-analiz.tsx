@@ -26,7 +26,7 @@ export function SayisalTurevHesaplayici() {
         <ResultRow label="Konkavlık" value={fpp > 0.01 ? "⌣ Aşağı bakan (konveks)" : fpp < -0.01 ? "⌢ Yukarı bakan (konkav)" : "Düzlem"} />
       </div>
       <div className="rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">
-        Sayısal türev merkezi fark ile: f'(x) ≈ (f(x+h) − f(x−h)) / (2h). h = 10⁻⁶.
+        Sayısal türev merkezi fark ile: f&apos;(x) ≈ (f(x+h) − f(x−h)) / (2h). h = 10⁻⁶.
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export function OranOrantiHesaplayici() {
     <div className="grid gap-6 sm:grid-cols-2">
       <div className="space-y-4">
         <p className="text-sm text-text-muted">
-          <code className="font-mono text-primary">a / b = c / x</code> denkleminde <strong>x</strong>'i çözer.
+          <code className="font-mono text-primary">a / b = c / x</code> denkleminde <strong>x</strong>&apos;i çözer.
         </p>
         <div className="grid grid-cols-3 gap-3">
           <Field label="a">

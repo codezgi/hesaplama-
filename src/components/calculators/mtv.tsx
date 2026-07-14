@@ -37,7 +37,7 @@ export function MtvHesaplayici() {
           <ResultRow label="2. taksit (Temmuz)" value={formatTL(r.taksit)} />
         </div>
         <div className="rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">
-          2026 (I sayılı cetvel, otomobil) yaklaşık tarifedir. Kesin tutar Gelir İdaresi'nin yıllık cetveline göre değişebilir.
+          2026 (I sayılı cetvel, otomobil) yaklaşık tarifedir. Kesin tutar Gelir İdaresi&apos;nin yıllık cetveline göre değişebilir.
         </div>
       </div>
     </div>

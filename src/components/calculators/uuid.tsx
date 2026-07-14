@@ -15,6 +15,8 @@ export function UuidHesaplayici() {
   }, [adet]);
 
   useEffect(() => {
+    // Rastgele değer SSR/hydration uyuşmazlığı yaratmasın diye yalnızca istemcide üretilir
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     uret();
   }, [uret]);
 

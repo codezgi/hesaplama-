@@ -81,7 +81,7 @@ export function HashHesaplayici() {
       </div>
 
       <p className="text-sm text-text-muted">
-        SHA algoritmaları tek yönlüdür — hash'ten metni geri elde edemezsiniz. İşlem tarayıcıda yapılır; veri sunucuya gönderilmez. (MD5 modern web kripto API'sinde bulunmadığı için hariç tutulmuştur.)
+        SHA algoritmaları tek yönlüdür — hash&apos;ten metni geri elde edemezsiniz. İşlem tarayıcıda yapılır; veri sunucuya gönderilmez. (MD5 modern web kripto API&apos;sinde bulunmadığı için hariç tutulmuştur.)
       </p>
     </div>
   );

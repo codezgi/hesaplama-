@@ -54,7 +54,7 @@ export function NeYiyeyimHesaplayici() {
             <div className="mt-3 text-2xl font-bold text-primary">{sonuc.split(" ").slice(1).join(" ")}</div>
           </div>
         )}
-        {!sonuc && <div className="text-center text-text-muted">Buton'a bas, ne yemek istediğinize karar verelim!</div>}
+        {!sonuc && <div className="text-center text-text-muted">Butona bas, ne yemek istediğinize karar verelim!</div>}
 
         <button type="button" onClick={sec} disabled={donuyor} className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-lg font-bold text-white shadow-lg hover:bg-primary-hover disabled:opacity-50">
           <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Karar veriliyor…" : sonuc ? "🔄 Bir de bu olsun" : "🍽️ Ne yiyeyim?"}

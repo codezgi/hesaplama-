@@ -155,7 +155,7 @@ export function kritikNoktalar(f: (x: number) => number, a: number, b: number, a
 /** f'nin a noktasında n. derece Taylor açılım katsayıları: [f(a), f'(a), f''(a)/2!, ...] */
 export function taylorKatsayilari(f: (x: number) => number, a: number, n: number): number[] {
   const kats: number[] = [f(a)];
-  let h = 1e-3;
+  const h = 1e-3;
   // Basit sayısal türev tekrarı — kararlı için düşük derece (5-6) tavsiye
   for (let k = 1; k <= n; k++) {
     let fak = 1;

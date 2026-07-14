@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { dcaHesapla, reklamMetrikleri, wpmHesapla, kitapBitis, isitmaKiyas, haliM2, ulasimKarti, audioSure, formatTL, formatNumber } from "@/lib/calc";
 import { ResultHero, ResultRow, Field, Segmented } from "@/components/result";
 
@@ -69,7 +69,13 @@ export function WpmTestHesaplayici() {
     "Küçük tasarrufların uzun vadede büyük yatırımlara dönüşür.",
     "Bir kitap okumak yeni bir dünyaya kapı açmak demektir.",
   ];
-  const [orjinal] = useState(cumleler[Math.floor(Math.random() * cumleler.length)]);
+  const [orjinal, setOrjinal] = useState(cumleler[0]);
+  useEffect(() => {
+    // Rastgele cümle yalnızca istemcide seçilir (hydration güvenliği)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setOrjinal(cumleler[Math.floor(Math.random() * cumleler.length)]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [metin, setMetin] = useState("");
   const [basladi, setBasladi] = useState<number | null>(null);
   const [bitti, setBitti] = useState<number | null>(null);
@@ -82,7 +88,7 @@ export function WpmTestHesaplayici() {
     }
   }
 
-  const sure = bitti && basladi ? (bitti - basladi) / 1000 / 60 : basladi ? (Date.now() - basladi) / 1000 / 60 : 0;
+  const sure = bitti && basladi ? (bitti - basladi) / 1000 / 60 : 0;
   let hata = 0;
   for (let i = 0; i < Math.min(metin.length, orjinal.length); i++) {
     if (metin[i] !== orjinal[i]) hata++;
