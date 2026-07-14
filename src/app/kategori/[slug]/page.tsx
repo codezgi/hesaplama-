@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { categories, getCategory } from "@/lib/categories";
 import { calculatorsByCategory } from "@/lib/calculators";
+import { categoryIntros } from "@/lib/category-seo";
 import { CalculatorCard } from "@/components/cards";
 import { AdSlot } from "@/components/ad-slot";
 
@@ -19,9 +20,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const cat = getCategory(slug);
   if (!cat) return {};
+  const aktif = calculatorsByCategory(slug).filter((c) => c.status === "active").length;
   return {
-    title: cat.title,
+    title: `${cat.title} — ${aktif} Ücretsiz Online Araç`,
     description: cat.description,
+    alternates: { canonical: `/kategori/${slug}` },
   };
 }
 
@@ -36,9 +39,48 @@ export default async function KategoriPage({
 
   const calcs = calculatorsByCategory(slug);
   const Icon = cat.icon;
+  const intro = categoryIntros[slug];
+
+  const SITE = "https://hesaplamamerkezi.com";
+  const url = `${SITE}/kategori/${slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#page`,
+        name: cat.title,
+        description: cat.description,
+        url,
+        inLanguage: "tr-TR",
+        isPartOf: { "@id": `${SITE}/#website` },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${url}#list`,
+        itemListElement: calcs
+          .filter((c) => c.status === "active")
+          .map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: c.title,
+            url: `${SITE}/hesaplama/${c.slug}`,
+          })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumbs`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Anasayfa", item: SITE },
+          { "@type": "ListItem", position: 2, name: cat.title, item: url },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="mb-6 flex items-center gap-1 text-sm text-text-muted">
         <Link href="/" className="hover:text-primary">Anasayfa</Link>
         <ChevronRight className="h-4 w-4" />
@@ -59,6 +101,10 @@ export default async function KategoriPage({
           </p>
         </div>
       </div>
+
+      {intro && (
+        <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">{intro}</p>
+      )}
 
       <AdSlot format="leaderboard" className="mt-8" />
 

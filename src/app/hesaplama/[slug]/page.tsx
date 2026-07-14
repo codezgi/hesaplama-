@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRight, Info, FunctionSquare, Clock } from "lucide-react";
 import { calculators, getCalculator, calculatorsByCategory } from "@/lib/calculators";
 import { getCategory } from "@/lib/categories";
+import { seoContent } from "@/lib/seo";
 import { calculatorComponents } from "@/components/calculators/registry";
 import { CalculatorCard } from "@/components/cards";
 import { AdSlot } from "@/components/ad-slot";
@@ -41,6 +42,11 @@ export default async function HesaplamaPage({
   const Component = calculatorComponents[calc.slug];
   const related = calculatorsByCategory(calc.category).filter((c) => c.slug !== calc.slug).slice(0, 3);
 
+  // SEO içerikleri: calculators.ts'teki alanlar öncelikli, yoksa seo/ modülünden tamamlanır
+  const extra = seoContent[calc.slug];
+  const faqs = calc.faqs?.length ? calc.faqs : extra?.faqs;
+  const howItWorks = calc.howItWorks?.length ? calc.howItWorks : extra?.howItWorks;
+
   const SITE = "https://hesaplamamerkezi.com";
   const url = `${SITE}/hesaplama/${calc.slug}`;
 
@@ -69,14 +75,14 @@ export default async function HesaplamaPage({
           { "@type": "ListItem", position: cat ? 3 : 2, name: calc.title, item: url },
         ],
       },
-      ...(calc.howItWorks && calc.howItWorks.length > 0
+      ...(howItWorks && howItWorks.length > 0
         ? [
             {
               "@type": "HowTo",
               "@id": `${url}#howto`,
               name: `${calc.title} nasıl yapılır?`,
               description: calc.description,
-              step: calc.howItWorks.map((s, i) => ({
+              step: howItWorks.map((s, i) => ({
                 "@type": "HowToStep",
                 position: i + 1,
                 name: `Adım ${i + 1}`,
@@ -85,12 +91,12 @@ export default async function HesaplamaPage({
             },
           ]
         : []),
-      ...(calc.faqs && calc.faqs.length > 0
+      ...(faqs && faqs.length > 0
         ? [
             {
               "@type": "FAQPage",
               "@id": `${url}#faq`,
-              mainEntity: calc.faqs.map((f) => ({
+              mainEntity: faqs.map((f) => ({
                 "@type": "Question",
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -158,7 +164,7 @@ export default async function HesaplamaPage({
       <AdSlot format="in-article" className="mt-8" />
 
       {/* Nasıl hesaplanır */}
-      {(calc.formula || calc.howItWorks) && (
+      {(calc.formula || howItWorks) && (
         <section className="mt-8">
           <h2 className="flex items-center gap-2 text-lg font-bold text-text">
             <FunctionSquare className="h-5 w-5 text-primary" /> Nasıl hesaplanır?
@@ -168,9 +174,9 @@ export default async function HesaplamaPage({
               {calc.formula}
             </div>
           )}
-          {calc.howItWorks && (
+          {howItWorks && (
             <ul className="mt-3 space-y-2">
-              {calc.howItWorks.map((line, i) => (
+              {howItWorks.map((line, i) => (
                 <li key={i} className="flex gap-2.5 text-text-muted">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{line}</span>
@@ -182,11 +188,11 @@ export default async function HesaplamaPage({
       )}
 
       {/* Sık sorulan sorular */}
-      {calc.faqs && calc.faqs.length > 0 && (
+      {faqs && faqs.length > 0 && (
         <section className="mt-10">
           <h2 className="mb-4 text-lg font-bold text-text">Sık Sorulan Sorular</h2>
           <div className="space-y-3">
-            {calc.faqs.map((f, i) => (
+            {faqs.map((f, i) => (
               <details key={i} className="group rounded-xl border border-border bg-surface p-4">
                 <summary className="cursor-pointer font-medium text-text list-none flex items-center justify-between">
                   <span>{f.q}</span>

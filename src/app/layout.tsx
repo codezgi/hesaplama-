@@ -64,6 +64,29 @@ export const metadata: Metadata = {
   },
 };
 
+// Site geneli JSON-LD: WebSite (+SearchAction, Google site içi arama kutusu) ve Organization
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://hesaplamamerkezi.com/#website",
+      url: "https://hesaplamamerkezi.com",
+      name: "Hesaplama Merkezi",
+      description:
+        "Maaş, KDV, kredi, döviz, sağlık, eğitim ve 240+ ücretsiz online hesaplama aracı.",
+      inLanguage: "tr-TR",
+      publisher: { "@id": "https://hesaplamamerkezi.com/#organization" },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://hesaplamamerkezi.com/#organization",
+      name: "Hesaplama Merkezi",
+      url: "https://hesaplamamerkezi.com",
+    },
+  ],
+};
+
 // Tema flash'ını (FOUC) önlemek için render öncesi çalışan script
 const themeScript = `
 (function() {
@@ -83,6 +106,10 @@ export default function RootLayout({
     <html lang="tr" className={`${inter.variable} h-full`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
