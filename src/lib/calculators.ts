@@ -1438,7 +1438,7 @@ export const calculators: Calculator[] = [
   /* --------------------------- ŞANS & KARAR (etkileşimli, tıklanma odaklı) --------------------------- */
   {
     slug: "karar-carki",
-    title: "🎡 Karar Çarkı (Spin the Wheel)",
+    title: "Karar Çarkı (Spin the Wheel)",
     category: "sans-karar",
     description: "İstediğin seçenekleri gir, çarkı döndür, rastgele karar ver! Nereye gideyim, ne yiyeyim, kim başlayacak — hepsi çarkta.",
     keywords: ["karar çarkı", "spin wheel", "çark döndür", "rastgele karar", "karar verme çarkı"],
@@ -1451,7 +1451,7 @@ export const calculators: Calculator[] = [
   },
   {
     slug: "yazi-tura",
-    title: "🪙 Yazı Tura Atma (Coin Flip)",
+    title: "Yazı Tura Atma (Coin Flip)",
     category: "sans-karar",
     description: "Klasik yazı-tura — animasyonlu para ile hızlıca karar ver. Ayrıca istatistik takibi de var.",
     keywords: ["yazı tura", "coin flip", "para at", "yazı tura simülasyon"],
@@ -1462,7 +1462,7 @@ export const calculators: Calculator[] = [
   },
   {
     slug: "zar-at",
-    title: "🎲 Zar Atma (1-5 Zar)",
+    title: "Zar Atma (1-5 Zar)",
     category: "sans-karar",
     description: "1'den 5'e kadar zar aynı anda at, toplamı ve ortalamayı gör. Tavla, Monopoly, DnD için idealdir.",
     keywords: ["zar atma", "dice roll", "tavla zarı", "rastgele zar", "d6"],
@@ -1470,7 +1470,7 @@ export const calculators: Calculator[] = [
   },
   {
     slug: "ne-yiyeyim",
-    title: "🍽️ Ne Yiyeyim? Yemek Önerici",
+    title: "Ne Yiyeyim? Yemek Önerici",
     category: "sans-karar",
     description: "5 kategoride 50+ yemek — hangisini yiyeceğine karar veremediğinde bir tık yeter. Türk, hızlı, sağlıklı, dünya mutfağı, tatlı.",
     keywords: ["ne yiyeyim", "yemek önerici", "karar veremiyorum yemek", "random food"],
@@ -1478,7 +1478,7 @@ export const calculators: Calculator[] = [
   },
   {
     slug: "tas-kagit-makas",
-    title: "✊✋✌️ Taş Kağıt Makas",
+    title: "Taş Kağıt Makas",
     category: "sans-karar",
     description: "Bilgisayara karşı taş-kağıt-makas oyna. Skor takibi ile.",
     keywords: ["taş kağıt makas", "rock paper scissors", "rps oyun"],
@@ -1573,7 +1573,7 @@ export const calculators: Calculator[] = [
   /* --------------------------- BİLİMSEL & KOMPLEKS --------------------------- */
   {
     slug: "formul-ifade",
-    title: "🧮 Formül / İfade Hesaplayıcı (Çok Değişkenli)",
+    title: "Formül / İfade Hesaplayıcı (Çok Değişkenli)",
     category: "bilimsel",
     description: "Kendi formülünü yaz, 8'e kadar değişken tanımla, sonucu anında al. sin/cos/tan, sqrt, log, ln, exp, pi/e desteklenir.",
     keywords: ["formül hesaplayıcı", "ifade hesaplama", "çok değişkenli", "bilimsel hesap makinesi", "matematik ifadesi"],
@@ -1710,7 +1710,7 @@ export const calculators: Calculator[] = [
   /* --------------------------- 240+ HEDEF --------------------------- */
   {
     slug: "grafik-cizici",
-    title: "📈 Fonksiyon Grafik Çizici (4 fonksiyon aynı ekranda)",
+    title: "Fonksiyon Grafik Çizici (4 fonksiyon aynı ekranda)",
     category: "bilimsel",
     description: "Kendi fonksiyonlarını gir, canlı SVG grafik olarak çiz. 4 farklı fonksiyon aynı ekranda karşılaştır — trigonometrik, üstel, polinom, karekök vs.",
     keywords: ["grafik çizici", "fonksiyon grafiği", "matematik grafik", "eğri çizim", "koordinat sistemi"],
@@ -1742,7 +1742,7 @@ export const calculators: Calculator[] = [
   },
   {
     slug: "wpm-test",
-    title: "⌨️ Klavye Yazma Hızı Testi (WPM)",
+    title: "Klavye Yazma Hızı Testi (WPM)",
     category: "sans-karar",
     description: "Rastgele bir cümle yazarak dakikada kaç kelime yazdığını (WPM) ve doğruluk oranını ölç. Etkileşimli, gerçek zamanlı geri bildirim.",
     keywords: ["wpm test", "klavye hızı", "yazma hızı", "typing test"],
@@ -1792,7 +1792,7 @@ export const calculators: Calculator[] = [
   /* --------------------------- TÜREV / İNTEGRAL / ANALİZ (bilimsel derinlik) --------------------------- */
   {
     slug: "turev-integral-grafik",
-    title: "🎓 Türev + İntegral Grafik Analizi (Kritik Nokta, Sıfır, Alan)",
+    title: "Türev + İntegral Grafik Analizi (Kritik Nokta, Sıfır, Alan)",
     category: "bilimsel",
     description: "f(x), f'(x), f''(x) aynı grafik üzerinde. Yerel min/max, sıfırlar (kökler), belirli integral alanı görsel olarak gösterilir.",
     keywords: ["türev grafiği", "integral grafiği", "kritik nokta", "yerel maksimum", "sıfırlar", "kalkulus"],

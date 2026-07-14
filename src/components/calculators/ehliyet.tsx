@@ -19,7 +19,7 @@ export function EhliyetHesaplayici() {
       </div>
       <div className="space-y-4">
         <ResultHero
-          label={r.basarili ? "✅ Başarılı" : "❌ Başarısız"}
+          label={r.basarili ? "Başarılı" : "Başarısız"}
           value={`${formatNumber(r.puan, 0)} puan`}
           sub={r.basarili ? "Ehliyet sınavını geçtiniz" : `Geçmek için ${r.kalan} doğru daha lazımdı`}
           tone="accent"

@@ -22,7 +22,7 @@ export function SayisalTurevHesaplayici() {
         <ResultRow label={`f(${xVal})`} value={formatNumber(fx, 6)} />
         <ResultRow label={`f'(${xVal}) — sayısal türev`} value={formatNumber(fp, 6)} />
         <ResultRow label={`f''(${xVal}) — 2. türev`} value={formatNumber(fpp, 6)} />
-        <ResultRow label="Yorum" value={Math.abs(fp) < 0.01 ? "🎯 Kritik nokta (f' ≈ 0)" : fp > 0 ? "↗ Artıyor" : "↘ Azalıyor"} />
+        <ResultRow label="Yorum" value={Math.abs(fp) < 0.01 ? "Kritik nokta (f' ≈ 0)" : fp > 0 ? "↗ Artıyor" : "↘ Azalıyor"} />
         <ResultRow label="Konkavlık" value={fpp > 0.01 ? "⌣ Aşağı bakan (konveks)" : fpp < -0.01 ? "⌢ Yukarı bakan (konkav)" : "Düzlem"} />
       </div>
       <div className="rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">
@@ -227,7 +227,7 @@ export function LimitHesaplayici() {
       <Field label="f(x) ="><input className="field font-mono" value={ifade} onChange={(e) => setIfade(e.target.value)} spellCheck={false} /></Field>
       <Field label="x → a"><input className="field tabular-nums" inputMode="decimal" value={a} onChange={(e) => setA(e.target.value)} /></Field>
 
-      <ResultHero label="Limit" value={r.iki !== null ? formatNumber(r.iki, 8) : "Yok / farklı"} sub={r.iki !== null ? "Sol = Sağ ✓" : `Sol: ${r.sol ?? "?"} · Sağ: ${r.sag ?? "?"}`} tone="accent" />
+      <ResultHero label="Limit" value={r.iki !== null ? formatNumber(r.iki, 8) : "Yok / farklı"} sub={r.iki !== null ? "Sol = Sağ" : `Sol: ${r.sol ?? "?"} · Sağ: ${r.sag ?? "?"}`} tone="accent" />
       <div className="card p-4">
         <ResultRow label="Sol limit (x → a⁻)" value={r.sol !== null ? formatNumber(r.sol, 6) : "—"} />
         <ResultRow label="Sağ limit (x → a⁺)" value={r.sag !== null ? formatNumber(r.sag, 6) : "—"} />

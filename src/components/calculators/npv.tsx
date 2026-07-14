@@ -25,7 +25,7 @@ export function NpvHesaplayici() {
         </div>
         <div className="space-y-4">
           <ResultHero
-            label={r.kararUygun ? "✅ Yatırım Uygun (NPV>0)" : "❌ Yatırım Uygun Değil"}
+            label={r.kararUygun ? "Yatırım Uygun (NPV>0)" : "Yatırım Uygun Değil"}
             value={formatTL(r.npv)}
             sub={`${akislar.length} dönem · %${formatNumber(o, 2)} iskonto`}
             tone="accent"

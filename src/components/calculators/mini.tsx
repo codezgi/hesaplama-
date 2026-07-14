@@ -188,7 +188,7 @@ export function PizzaHesaplayici() {
         <div className="card p-4">
           <ResultRow label="Pizza alanı" value={`${formatNumber(alan, 0)} cm²`} />
           <ResultRow label="Kişi başı" value={`${formatNumber(kisiBasi, 0)} cm²`} />
-          <ResultRow label="Öneri: 500 cm² üstü doyurucu" value={kisiBasi >= 500 ? "✓ Yeterli" : "✗ Az"} />
+          <ResultRow label="Öneri: 500 cm² üstü doyurucu" value={kisiBasi >= 500 ? "Yeterli" : "Az"} />
         </div>
       </div>
     </div>

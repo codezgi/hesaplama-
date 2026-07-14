@@ -49,7 +49,7 @@ export function YaziTuraHesaplayici() {
           disabled={donuyor}
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-lg font-bold text-white shadow-lg hover:bg-primary-hover disabled:opacity-50"
         >
-          <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Havada…" : "🪙 Parayı At"}
+          <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Havada…" : "Parayı At"}
         </button>
       </div>
 

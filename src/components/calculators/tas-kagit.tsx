@@ -23,9 +23,9 @@ export function TasKagitMakasHesaplayici() {
     setK(secim);
     setB(bilSecim);
     const sonuc = kimKazandi(secim, bilSecim);
-    if (sonuc === "kullanici") { setSonuc("🏆 Kazandın!"); setSkor((p) => ({ ...p, kul: p.kul + 1 })); }
-    else if (sonuc === "bilgisayar") { setSonuc("😢 Kaybettin"); setSkor((p) => ({ ...p, bil: p.bil + 1 })); }
-    else { setSonuc("🤝 Berabere"); setSkor((p) => ({ ...p, ber: p.ber + 1 })); }
+    if (sonuc === "kullanici") { setSonuc("Kazandın!"); setSkor((p) => ({ ...p, kul: p.kul + 1 })); }
+    else if (sonuc === "bilgisayar") { setSonuc("Kaybettin"); setSkor((p) => ({ ...p, bil: p.bil + 1 })); }
+    else { setSonuc("Berabere"); setSkor((p) => ({ ...p, ber: p.ber + 1 })); }
   }
 
   return (

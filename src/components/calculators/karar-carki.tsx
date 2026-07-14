@@ -145,13 +145,13 @@ export function KararCarkiHesaplayici() {
           disabled={donuyor || n < 2}
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-lg font-bold text-white shadow-lg hover:bg-primary-hover disabled:opacity-50"
         >
-          <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Dönüyor…" : "🎲 Çarkı Döndür"}
+          <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Dönüyor…" : "Çarkı Döndür"}
         </button>
 
         {sonuc && (
           <div className="mt-4 rounded-xl border border-primary/30 bg-primary-soft px-5 py-3 text-center">
             <div className="text-xs text-text-muted uppercase tracking-wider">Kazanan</div>
-            <div className="text-2xl font-bold text-primary">🎉 {sonuc}</div>
+            <div className="text-2xl font-bold text-primary">{sonuc}</div>
           </div>
         )}
       </div>

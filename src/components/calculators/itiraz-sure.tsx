@@ -25,7 +25,7 @@ export function ItirazSureHesaplayici() {
         {r && (
           <>
             <ResultHero
-              label={r.gecmisMi ? "❌ Süre GEÇMİŞ" : `${r.kalanGun} gün kaldı`}
+              label={r.gecmisMi ? "Süre GEÇMİŞ" : `${r.kalanGun} gün kaldı`}
               value={r.sonTarih.toLocaleDateString("tr-TR", { day: "2-digit", month: "long", year: "numeric" })}
               sub={secili.aciklama}
               tone="accent"

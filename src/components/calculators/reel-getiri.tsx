@@ -14,7 +14,7 @@ export function ReelGetiriHesaplayici() {
         <Field label="Enflasyon (%)"><input className="field tabular-nums" inputMode="decimal" value={enflasyon} onChange={(e) => setEnflasyon(e.target.value)} /></Field>
       </div>
       <div className="space-y-4">
-        <ResultHero label="Reel Getiri" value={`%${formatNumber(r.reelYuzde, 2)}`} sub={r.netKayipMi ? "❌ Reel kayıp — satın alma gücü düştü" : "✅ Reel kazanç"} tone="accent" />
+        <ResultHero label="Reel Getiri" value={`%${formatNumber(r.reelYuzde, 2)}`} sub={r.netKayipMi ? "Reel kayıp — satın alma gücü düştü" : "Reel kazanç"} tone="accent" />
         <div className="card p-4">
           <ResultRow label="Nominal" value={`%${nominal}`} />
           <ResultRow label="Enflasyon" value={`%${enflasyon}`} />

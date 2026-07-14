@@ -39,7 +39,7 @@ export function DenkSistem2Hesaplayici() {
         </>
       )}
       {r.tur === "yok" && (
-        <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">❌ Bu denklem sisteminin çözümü yok (paralel doğrular).</div>
+        <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">Bu denklem sisteminin çözümü yok (paralel doğrular).</div>
       )}
       {r.tur === "sonsuz" && (
         <div className="rounded-xl border border-primary/30 bg-primary-soft px-4 py-3 text-sm text-primary">∞ Sonsuz çözüm var (aynı doğru).</div>
@@ -113,7 +113,7 @@ export function DenkSistem3Hesaplayici() {
           </div>
         </>
       ) : (
-        <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">❌ Determinant sıfır — sistem tekil (çözüm yok veya sonsuz çözüm).</div>
+        <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">Determinant sıfır — sistem tekil (çözüm yok veya sonsuz çözüm).</div>
       )}
     </div>
   );

@@ -4,11 +4,11 @@ import { RefreshCw } from "lucide-react";
 import { ResultHero, Segmented, Field } from "@/components/result";
 
 const YEMEKLER: Record<string, string[]> = {
-  turk: ["🍖 Adana Kebap", "🥘 Tas Kebabı", "🍚 Etli Pilav", "🥟 Mantı", "🫓 Lahmacun", "🍢 Şiş Köfte", "🧆 İçli Köfte", "🥣 Yayla Çorbası", "🥧 Su Böreği", "🍅 Menemen", "🌯 Beyti", "🥩 Tavuk Şiş", "🫔 Simit", "🥧 Karnıyarık", "🌯 Dürüm", "🥘 Bamya"],
-  hizli: ["🍔 Hamburger", "🍕 Pizza", "🌭 Sosisli", "🥙 Döner Dürüm", "🍟 Patates Kızartması", "🌮 Taco", "🥪 Sandviç", "🍗 Tavuk But", "🥯 Bagel"],
-  saglikli: ["🥗 Ton Balıklı Salata", "🍲 Mercimek Çorbası", "🍎 Meyve Tabağı", "🥒 Salatalık Yoğurtlu", "🥑 Avokado Toast", "🐟 Izgara Somon", "🥬 Yeşil Salata", "🥕 Havuç Tarama", "🍠 Bulgur Pilavı"],
-  dunya: ["🍜 Ramen", "🍱 Sushi", "🍛 Curry", "🌯 Burrito", "🍝 Makarna", "🥘 Paella", "🍲 Pho", "🥟 Dumpling", "🥙 Falafel", "🌮 Taco"],
-  tatli: ["🍰 Cheesecake", "🍮 Sütlaç", "🧁 Muffin", "🍩 Donut", "🍨 Dondurma", "🥮 Baklava", "🍫 Brownie", "🍡 Muhallebi", "🍯 Kadayıf"],
+  turk: ["Adana Kebap", "Tas Kebabı", "Etli Pilav", "Mantı", "Lahmacun", "Şiş Köfte", "İçli Köfte", "Yayla Çorbası", "Su Böreği", "Menemen", "Beyti", "Tavuk Şiş", "Simit", "Karnıyarık", "Dürüm", "Bamya"],
+  hizli: ["Hamburger", "Pizza", "Sosisli", "Döner Dürüm", "Patates Kızartması", "Taco", "Sandviç", "Tavuk But", "Bagel"],
+  saglikli: ["Ton Balıklı Salata", "Mercimek Çorbası", "Meyve Tabağı", "Salatalık Yoğurtlu", "Avokado Toast", "Izgara Somon", "Yeşil Salata", "Havuç Tarama", "Bulgur Pilavı"],
+  dunya: ["Ramen", "Sushi", "Curry", "Burrito", "Makarna", "Paella", "Pho", "Dumpling", "Falafel", "Taco"],
+  tatli: ["Cheesecake", "Sütlaç", "Muffin", "Donut", "Dondurma", "Baklava", "Brownie", "Muhallebi", "Kadayıf"],
 };
 
 export function NeYiyeyimHesaplayici() {
@@ -39,11 +39,11 @@ export function NeYiyeyimHesaplayici() {
     <div className="space-y-6">
       <Field label="Kategori">
         <Segmented value={kategori} onChange={setKategori} options={[
-          { label: "🇹🇷 Türk", value: "turk" },
-          { label: "🍔 Hızlı", value: "hizli" },
-          { label: "🥗 Sağlıklı", value: "saglikli" },
-          { label: "🌍 Dünya", value: "dunya" },
-          { label: "🍰 Tatlı", value: "tatli" },
+          { label: "Türk", value: "turk" },
+          { label: "Hızlı", value: "hizli" },
+          { label: "Sağlıklı", value: "saglikli" },
+          { label: "Dünya", value: "dunya" },
+          { label: "Tatlı", value: "tatli" },
         ]} />
       </Field>
 
@@ -57,7 +57,7 @@ export function NeYiyeyimHesaplayici() {
         {!sonuc && <div className="text-center text-text-muted">Butona bas, ne yemek istediğinize karar verelim!</div>}
 
         <button type="button" onClick={sec} disabled={donuyor} className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-lg font-bold text-white shadow-lg hover:bg-primary-hover disabled:opacity-50">
-          <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Karar veriliyor…" : sonuc ? "🔄 Bir de bu olsun" : "🍽️ Ne yiyeyim?"}
+          <RefreshCw className={`h-5 w-5 ${donuyor ? "animate-spin" : ""}`} /> {donuyor ? "Karar veriliyor…" : sonuc ? "Bir de bu olsun" : "Ne yiyeyim?"}
         </button>
       </div>
 

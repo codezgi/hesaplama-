@@ -59,7 +59,7 @@ export function ZarAtHesaplayici() {
 
       <div className="flex flex-col items-center gap-4">
         <button type="button" onClick={at} disabled={salla} className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-lg font-bold text-white shadow-lg hover:bg-primary-hover disabled:opacity-50">
-          <RefreshCw className={`h-5 w-5 ${salla ? "animate-spin" : ""}`} /> {salla ? "Sallanıyor…" : "🎲 Zar At"}
+          <RefreshCw className={`h-5 w-5 ${salla ? "animate-spin" : ""}`} /> {salla ? "Sallanıyor…" : "Zar At"}
         </button>
 
         {!salla && (

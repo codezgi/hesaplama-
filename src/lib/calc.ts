@@ -444,11 +444,11 @@ export function wpmHesapla(karakter: number, dakika: number, hataSayisi = 0) {
   const netWpm = Math.max(0, brutWpm - hataSayisi / Math.max(1, dakika));
   const dogrulukYuzde = kelime > 0 ? Math.max(0, ((kelime - hataSayisi) / kelime) * 100) : 0;
   let seviye: string;
-  if (netWpm >= 100) seviye = "🏆 Uzman";
-  else if (netWpm >= 70) seviye = "⚡ Hızlı";
-  else if (netWpm >= 50) seviye = "✓ İyi";
+  if (netWpm >= 100) seviye = "Uzman";
+  else if (netWpm >= 70) seviye = "Hızlı";
+  else if (netWpm >= 50) seviye = "İyi";
   else if (netWpm >= 30) seviye = "→ Orta";
-  else seviye = "🐢 Yavaş";
+  else seviye = "Yavaş";
   return { brutWpm, netWpm, kelime, dogrulukYuzde, seviye };
 }
 

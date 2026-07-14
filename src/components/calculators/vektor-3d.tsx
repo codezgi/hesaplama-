@@ -41,7 +41,7 @@ export function Vektor3DHesaplayici() {
         <ResultRow label="A · B — nokta çarpım" value={formatNumber(nokta, 4)} />
         <ResultRow label="A × B — çapraz çarpım" value={`(${formatNumber(capraz.x, 2)}, ${formatNumber(capraz.y, 2)}, ${formatNumber(capraz.z, 2)})`} />
         <ResultRow label="Aralarındaki açı" value={`${formatNumber(aci, 2)}°`} />
-        <ResultRow label="Ortogonal mi?" value={Math.abs(nokta) < 0.001 ? "✓ Evet (nokta çarpım ≈ 0)" : "✗ Hayır"} />
+        <ResultRow label="Ortogonal mi?" value={Math.abs(nokta) < 0.001 ? "Evet (nokta çarpım ≈ 0)" : "Hayır"} />
       </div>
     </div>
   );

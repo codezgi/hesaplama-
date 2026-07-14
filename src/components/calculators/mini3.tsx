@@ -122,7 +122,7 @@ export function KuraCekimHesaplayici() {
     <Field label="İsimler (virgülle ayır)"><textarea className="field h-24 resize-y" value={isimler} onChange={(e) => setIsimler(e.target.value)} /></Field>
     <div className="space-y-3">
       <Field label="Kaç kişi seçilecek?"><input className="field tabular-nums" inputMode="numeric" value={adet} onChange={(e) => setAdet(e.target.value)} /></Field>
-      <button type="button" onClick={yap} className="rounded-lg bg-primary px-4 py-2 text-white font-medium hover:bg-primary-hover">🎲 Kur&apos;a Çek</button>
+      <button type="button" onClick={yap} className="rounded-lg bg-primary px-4 py-2 text-white font-medium hover:bg-primary-hover">Kur&apos;a Çek</button>
     </div>
   </div>
     {secim.length > 0 && <ResultHero label="Kur'a Sonucu" value={secim.join(", ")} tone="accent" />}

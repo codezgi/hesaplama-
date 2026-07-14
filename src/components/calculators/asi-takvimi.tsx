@@ -40,7 +40,7 @@ export function AsiTakvimiHesaplayici() {
               }
               value={
                 <span className={asilmis ? "text-text-muted" : yakin ? "text-primary font-bold" : "text-text-muted"}>
-                  {asilmis ? "✓ Yapılmış olmalı" : yakin ? "◉ Yakında" : "○ Bekleniyor"}
+                  {asilmis ? "Yapılmış olmalı" : yakin ? "Yakında" : "Bekleniyor"}
                 </span>
               }
             />

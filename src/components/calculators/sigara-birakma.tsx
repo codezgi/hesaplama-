@@ -34,11 +34,11 @@ export function SigaraBirakmaHesaplayici() {
           {r.asamalari.length > 0 ? (
             <ul className="space-y-1.5 text-sm">
               {r.asamalari.map((a, i) => (
-                <li key={i} className="text-text-muted"><span className="mr-1 text-primary">✓</span> {a.ad}</li>
+                <li key={i} className="text-text-muted"><span className="mr-1 text-primary">–</span> {a.ad}</li>
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-text-muted">Henüz aşama yok — devam et! 💪</p>
+            <p className="text-sm text-text-muted">Henüz aşama yok — devam et!</p>
           )}
           {r.sonrakiAsama && (
             <div className="mt-3 border-t border-border pt-3 text-sm">

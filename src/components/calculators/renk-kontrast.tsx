@@ -74,7 +74,7 @@ export function RenkKontrastHesaplayici() {
         />
         <div className="card p-4">
           {durumlar.map((d) => (
-            <ResultRow key={d.ad} label={`${d.ad} (≥${d.esik}:1)`} value={<span className={d.gecti ? "text-primary" : "text-accent"}>{d.gecti ? "✓ Geçer" : "✗ Kalır"}</span>} />
+            <ResultRow key={d.ad} label={`${d.ad} (≥${d.esik}:1)`} value={<span className={d.gecti ? "text-primary" : "text-accent"}>{d.gecti ? "Geçer" : "Kalır"}</span>} />
           ))}
         </div>
         <div className="rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">

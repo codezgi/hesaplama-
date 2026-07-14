@@ -76,7 +76,7 @@ export function Matris2Hesaplayici() {
 
       <div className="card p-4">
         <ResultRow label="det(A)" value={formatNumber(detA, 4)} />
-        <ResultRow label="A tersi var mı?" value={detA !== 0 ? "✓ Var" : "✗ Yok (det=0)"} />
+        <ResultRow label="A tersi var mı?" value={detA !== 0 ? "Var" : "Yok (det=0)"} />
       </div>
     </div>
   );

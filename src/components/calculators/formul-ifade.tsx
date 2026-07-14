@@ -84,7 +84,7 @@ export function FormulIfadeHesaplayici() {
       </div>
 
       {sonuc.hata ? (
-        <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">❌ {sonuc.hata}</div>
+        <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">{sonuc.hata}</div>
       ) : (
         <ResultHero label="Sonuç" value={formatNumber(sonuc.deger, 6)} sub={ifade} tone="accent" />
       )}

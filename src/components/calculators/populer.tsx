@@ -22,9 +22,9 @@ export function AylikButceHesaplayici() {
       <div className="space-y-4">
         <ResultHero label="Aylık Birikim" value={formatTL(birikim)} sub={`Yıllık: ${formatTL(birikim * 12)}`} tone="accent" />
         <div className="card p-4">
-          <ResultRow label="🏠 İhtiyaçlar (%50)" value={formatTL(ihtiyac)} />
-          <ResultRow label="🎭 İstekler (%30)" value={formatTL(istek)} />
-          <ResultRow label="💰 Birikim/Borç (%20)" value={formatTL(birikim)} />
+          <ResultRow label="İhtiyaçlar (%50)" value={formatTL(ihtiyac)} />
+          <ResultRow label="İstekler (%30)" value={formatTL(istek)} />
+          <ResultRow label="Birikim/Borç (%20)" value={formatTL(birikim)} />
           <ResultRow label="Kira üst sınır (~%30)" value={formatTL(g * 0.3)} />
         </div>
       </div>
@@ -75,18 +75,18 @@ export function KiralaVsSatinAlHesaplayici() {
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="card p-4">
-          <div className="mb-2 text-sm font-semibold text-primary">🏠 SATIN AL</div>
+          <div className="mb-2 text-sm font-semibold text-primary">SATIN AL</div>
           <ResultRow label="Peşinat" value={formatTL(pesinatTutar)} />
           <ResultRow label="Aylık taksit" value={formatTL(taksit)} />
           <ResultRow label={`Toplam ödeme (${v} ay)`} value={formatTL(pesinatTutar + toplamKrediOdeme)} />
-          <ResultRow label="Sonunda ev senin" value="✓ (mülk edinme)" />
+          <ResultRow label="Sonunda ev senin" value="Evet (mülk edinme)" />
         </div>
         <div className="card p-4">
-          <div className="mb-2 text-sm font-semibold text-accent">🔑 KİRALA</div>
+          <div className="mb-2 text-sm font-semibold text-accent">KİRALA</div>
           <ResultRow label="Aylık kira başlangıç" value={formatTL(k)} />
           <ResultRow label={`Toplam kira (${yilSayisi.toFixed(1)} yıl)`} value={formatTL(toplamKira)} />
           <ResultRow label="Peşinat = yatırıma" value={formatTL(pesinatTutar)} />
-          <ResultRow label="Sonunda ev senin değil" value="✗" />
+          <ResultRow label="Sonunda ev senin değil" value="Hayır" />
         </div>
       </div>
       <div className="rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-text-muted">
@@ -169,7 +169,7 @@ export function KiraGelirOranHesaplayici() {
   const g = parseFloat(gelir) || 0;
   const k = parseFloat(kira) || 0;
   const oran = g > 0 ? (k / g) * 100 : 0;
-  const durum = oran <= 25 ? "🎯 Mükemmel" : oran <= 30 ? "✓ Sağlıklı" : oran <= 40 ? "⚠️ Zorlayıcı" : "❌ Sürdürülemez";
+  const durum = oran <= 25 ? "Mükemmel" : oran <= 30 ? "Sağlıklı" : oran <= 40 ? "Zorlayıcı" : "Sürdürülemez";
   const uygunKira = g * 0.3;
   return (
     <div className="grid gap-6 sm:grid-cols-2">

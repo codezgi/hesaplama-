@@ -59,7 +59,7 @@ export function AlkolPromilHesaplayici() {
           <ResultRow label="Ceza notu" value={<span className="text-right text-sm">{r.ceza}</span>} />
         </div>
         <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-3 text-sm text-accent">
-          ⚠️ Widmark tahmini formüldür. TCK m.179 uyarınca 0,50 ‰ üstü sürüş yasaktır. Alkollüyken kesinlikle direksiyon başına geçmeyin.
+          Uyarı: Widmark tahmini formüldür. TCK m.179 uyarınca 0,50 ‰ üstü sürüş yasaktır. Alkollüyken kesinlikle direksiyon başına geçmeyin.
         </div>
       </div>
     </div>
