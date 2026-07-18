@@ -30,6 +30,10 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "BES devlet katkısının tamamını ne zaman alabilirim?", a: "Devlet katkısının tamamına hak kazanmak için sistemde en az 10 yıl kalıp 56 yaşını doldurmanız gerekir. Erken çıkışta kalış sürenize göre kademeli hak ediş uygulanır (3-6 yıl %15, 6-10 yıl %35, 10+ yıl %60)." },
       { q: "BES'ten erken çıkarsam ne kaybederim?", a: "Erken çıkışta devlet katkısının hak etmediğiniz kısmını alamazsınız ve birikiminizin getirisi üzerinden stopaj kesilir. Kesinti oranı sistemde kalma sürenize göre değişir." },
     ],
+    detay: [
+      "Devlet katkısının yıllık üst sınırı, o yılki brüt asgari ücretin belirli bir katıyla sabittir — çok yüksek tutarlarda katkı payı ödeseniz bile devlet katkısı bu tavanın üzerine çıkmaz; yüksek gelirli katılımcılar için katkı payını bu tavana göre optimize etmek mantıklıdır.",
+      "Devlet katkısı hesaba anında yatmaz, genellikle takip eden ayın belirli bir gününde yansır ve kendi getirisiyle birlikte büyümeye başlar — ilk birkaç ayda hesap özetinde görünmemesi bir hata değil, sistemin normal işleyişidir.",
+    ],
   },
   "bilesik-faiz-katki": {
     howItWorks: [
@@ -42,6 +46,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Aylık düzenli katkı birikimi nasıl etkiler?", a: "Düzenli katkı, tek seferlik yatırıma göre hem disiplin sağlar hem de maliyet ortalaması etkisi yaratır. Formüldeki ikinci terim (PMT × ((1+i)ⁿ−1)/i) katkıların bileşik büyümesini hesaplar." },
       { q: "Getiri oranını nasıl seçmeliyim?", a: "Mevduat için bankaların güncel yıllık oranını 12'ye bölerek, fon/hisse için geçmiş yıllık ortalama getiriyi kullanabilirsiniz. Enflasyonu düşerek reel getiriyle hesaplamak daha gerçekçi sonuç verir." },
     ],
+    detay: [
+      "İlk yıllarda toplam birikimin büyük kısmı sizin katkılarınızdan oluşur, faizin payı küçüktür — ama zaman geçtikçe oran tersine döner ve uzun vadeli hesaplarda (15-20 yıl) toplam birikimin yarıdan fazlası yalnızca faizin faizinden gelir; bu yüzden erken başlamak, yüksek katkı tutarından bile daha belirleyici olabilir.",
+    ],
   },
   "birikim-hedef-suresi": {
     howItWorks: [
@@ -53,12 +60,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Birikim süremi nasıl kısaltabilirim?", a: "Üç kaldıraç vardır: aylık katkıyı artırmak, daha yüksek getirili (ama riskli olabilecek) araçlara yönelmek ve birikime erken başlamak. Küçük katkı artışları bileşik etkiyle süreyi beklenenden fazla kısaltır." },
       { q: "Enflasyon hedef tutarımı etkiler mi?", a: "Evet — 5 yıl sonraki 1 milyon ₺, bugünkü 1 milyon ₺'den daha az mal alır. Hedefi bugünkü fiyatlarla koyuyorsanız getiri oranı yerine reel getiri (getiri − enflasyon) kullanın." },
     ],
+    detay: [
+      "Aylık katkıyı %20 artırmak, süreyi sezgisel olarak beklenenden daha fazla kısaltır çünkü her ek lira, kalan sürenin tamamı boyunca bileşik büyümeye katılır — hedefin son yıllarına yakınken yapılan küçük bir katkı artışı, başlangıçta yapılana göre daha az etkilidir; bu yüzden artışı olabildiğince erken yapmak matematiksel olarak daha verimlidir.",
+    ],
   },
   "coklu-kur": {
     faqs: [
       { q: "TL karşılığında kaç dolar/euro alabilirim?", a: "Araç, girdiğiniz TL tutarını TCMB güncel satış kurlarıyla aynı anda dolar, euro, sterlin ve diğer para birimlerine çevirir. Kurlar gün içinde otomatik güncellenir." },
       { q: "Hangi kur kullanılır: alış mı satış mı?", a: "Döviz satın alırken bankanın satış kuru, bozdururken alış kuru uygulanır. Bu araç TL'den dövize geçişte satış kurunu esas alır; bankaların kur marjı TCMB kurundan bir miktar farklı olabilir." },
       { q: "Kurlar ne sıklıkla güncellenir?", a: "TCMB gösterge kurları her iş günü öğleden sonra açıklanır; sayfa bu veriyi otomatik çeker. Hafta sonu ve tatillerde son iş gününün kuru gösterilir." },
+    ],
+    detay: [
+      "Aynı anda birden fazla para birimine bakmak, seyahat öncesi bütçe planlamasında veya yurt dışı alışverişte hangi para biriminde ödeme yapmanın daha avantajlı olduğunu görmek için kullanışlıdır — kredi kartı şirketinizin uyguladığı çevrim kuru burada gösterilen TCMB kurundan farklı olacağını unutmayın.",
     ],
   },
   "emeklilik-yasi": {
@@ -71,6 +84,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "EYT kimleri kapsıyor?", a: "8 Eylül 1999'dan önce sigortalı olanlar, yaş şartı olmaksızın prim günü ve sigortalılık süresi koşullarını (kadın 20 yıl/5.000-5.975 gün, erkek 25 yıl/5.000-5.975 gün) sağladıklarında emekli olabilir." },
       { q: "Eksik prim günümü nasıl tamamlarım?", a: "Çalışmaya devam ederek, askerlik/doğum borçlanması yaparak veya isteğe bağlı sigorta ödeyerek prim gününüzü artırabilirsiniz. Borçlanma tutarları için SGK'ya başvurmanız gerekir." },
     ],
+    detay: [
+      "İlk sigortalılık tarihi, ilk işe başladığınız gün değil SGK'ya ilk kez bildiriminizin yapıldığı tarihtir — stajyerlik, kısa süreli mevsimlik iş veya sigortasız geçen ilk birkaç ay bu tarihi geriye çekmez; e-Devlet'teki 'hizmet dökümü' sayfasından bu tarihi kesin olarak teyit edin, tahmini hesap yapmayın.",
+    ],
   },
   "enflasyon-guncelleme": {
     howItWorks: [
@@ -82,12 +98,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "TÜFE güncellemesi hangi işlemlerde kullanılır?", a: "Kira depozitosu iadesi, mahkeme alacaklarının güncellenmesi, sözleşme bedellerinin revizyonu ve geçmiş maaşların bugünkü değerle karşılaştırılması gibi işlemlerde yaygın kullanılır." },
       { q: "Endeks verisi nereden gelir?", a: "TÜİK'in aylık açıkladığı Tüketici Fiyat Endeksi kullanılır. Hesap, iki tarih arasındaki endeks oranını uygular; resmî işlemlerde TÜİK'in kendi hesaplayıcısıyla teyit etmeniz önerilir." },
     ],
+    detay: [
+      "TÜFE genel sepet enflasyonunu ölçer; kira, eğitim veya sağlık gibi belirli bir kalemin fiyat artışı genel TÜFE'den belirgin sapabilir — bir mahkeme alacağını güncellerken hangi endeksin (TÜFE, ÜFE, yasal faiz) uygulanacağı ilamda veya sözleşmede belirtilmemişse hangisinin esas alınacağı ihtilaf konusu olabilir.",
+    ],
   },
   "forward-kur": {
     faqs: [
       { q: "Forward kur nedir?", a: "Gelecekteki bir tarihte gerçekleşecek döviz alım-satımı için bugünden sabitlenen kurdur. İki para biriminin faiz farkından hesaplanır: F = Spot × (1 + TL faizi × t/365) / (1 + döviz faizi × t/365)." },
       { q: "Forward kur neden spot kurdan yüksektir?", a: "TL faizi döviz faizinden yüksek olduğu sürece forward kur spot kurun üzerinde oluşur; buna forward primi denir. Bu, arbitrajı engelleyen matematiksel bir denge fiyatıdır, kur tahmini değildir." },
       { q: "Forward sözleşmeyi kimler kullanır?", a: "İthalatçı ve ihracatçılar gelecekteki döviz ödemelerinin/tahsilatlarının TL maliyetini bugünden sabitleyerek kur riskinden korunmak (hedge) için kullanır." },
+    ],
+    detay: [
+      "Forward kur bir bahis ya da tahmin değil, faiz paritesinden zorunlu olarak türeyen bir denge fiyatıdır — piyasa bu dengeden saparsa, faiz arbitrajı yapan kurumlar farkı anında kapatır; bu yüzden 'forward kur şu seviyeye gidecek mi' sorusu aslında 'faiz farkı nasıl değişecek' sorusuna indirgenir.",
     ],
   },
   "freelance-saatlik-ucret": {
@@ -100,6 +122,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Maaşlı işteki ücretimle nasıl karşılaştırırım?", a: "Maaşlı çalışanın aldığı SGK işveren payı, izin, kıdem ve diğer yan hakları kendiniz karşılayacaksınız. Kabaca, brüt maaş karşılığının %30-50 üzerinde bir saatlik hedef koymak bu farkı dengeler." },
       { q: "Vergi ve giderleri hesaba katmalı mıyım?", a: "Evet — hedef geliri net düşünüyorsanız üzerine gelir vergisi, KDV sorumlulukları, bağkur primi ve ofis/donanım giderlerini ekleyin. Aracın sonucunu bu kalemleri kapsayan brüt hedefle kullanın." },
     ],
+    detay: [
+      "Yeni başlayan serbest çalışanların en sık yaptığı hata, haftanın tamamını (40 saat) faturalandırılabilir kabul etmesidir — gerçekte teklif hazırlama, fatura kesme, müşteri görüşmesi ve boş geçen dönemler hesaba katıldığında yıllık ortalama faturalandırılabilir oran genellikle %50-65 civarında kalır; saatlik ücretinizi buna göre yukarı çekmezseniz yıl sonunda hedeflediğiniz gelire ulaşamazsınız.",
+    ],
   },
   "iban-dogrulama": {
     faqs: [
@@ -107,12 +132,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Geçerli IBAN, hesabın var olduğunu gösterir mi?", a: "Hayır — doğrulama yalnızca yazım/kontrol basamağının tutarlı olduğunu gösterir. Hesabın gerçekten açık ve doğru kişiye ait olduğunu ancak bankanız transfer sırasında teyit eder." },
       { q: "IBAN'ı yanlış girersem param kaybolur mu?", a: "Kontrol basamağı sayesinde tek karakterlik yazım hataları neredeyse her zaman yakalanır ve transfer reddedilir. Ancak geçerli ama yanlış kişiye ait bir IBAN'a gönderim yapılabilir; alıcı adı kontrolü bu yüzden önemlidir." },
     ],
+    detay: [
+      "Türkiye'de IBAN'ın 5-6. haneleri bankanın kodunu (eski şube/banka kodu sisteminden kalma), sonraki haneler hesap numarasını taşır — bu araç yalnızca matematiksel geçerliliği kontrol eder, hangi bankaya ait olduğunu göstermez; banka adını teyit etmek için ayrıca banka kodu tablosuna bakmanız gerekir.",
+    ],
   },
   "irr-hesaplama": {
     faqs: [
       { q: "IRR (iç verim oranı) nedir?", a: "Bir yatırımın nakit akışlarının net bugünkü değerini sıfır yapan iskonto oranıdır. Projenin 'yıllık yüzde kaç kazandırdığının' tek sayılık özetidir ve projeleri karşılaştırmada kullanılır." },
       { q: "IRR nasıl yorumlanır?", a: "IRR, sermaye maliyetinizden (ya da alternatif getiriden) yüksekse proje değer yaratır. Örneğin IRR %45, mevduat %35 ise proje tercih edilebilir; IRR düşükse parayı alternatifte tutmak daha iyidir." },
       { q: "IRR'nin zayıf yönleri nelerdir?", a: "Nakit akışı işaret değiştiren projelerde birden fazla IRR çıkabilir ve farklı ölçekteki projeleri kıyaslarken yanıltabilir. Bu durumlarda NPV ile birlikte değerlendirmek gerekir." },
+    ],
+    detay: [
+      "IRR yüksek çıkan küçük bir proje ile IRR'si daha düşük ama büyük bir proje karşılaştırıldığında, yalnızca orana bakmak yanıltıcıdır — 10.000 ₺'lik yatırımdan %80 IRR, 1.000.000 ₺'lik yatırımdan %30 IRR'den mutlak kazanç olarak çok daha küçük bir tutara karşılık gelebilir; büyük sermayeli kararlarda NPV'nin mutlak tutarına da bakmak gerekir.",
     ],
   },
   "kredi-karti-asgari": {
@@ -126,12 +157,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Sadece asgariyi ödersem ne olur?", a: "Kalan borca her ay faiz biner ve borç hızla büyür; yüksek faiz oranlarında yalnızca asgari ödeyerek borcu kapatmak yıllar alabilir. Mümkünse dönem borcunun tamamını ödemek en ekonomik yoldur." },
       { q: "Asgariyi de ödemezsem ne olur?", a: "Gecikme faizi (akdi faizden daha yüksek) uygulanır, kart kullanıma kapatılabilir ve ödemesizlik sicilinize (KKB/findeks) olumsuz yansır." },
     ],
+    detay: [
+      "Bir defa asgari ödeme yaptığınızda ay içinde yaptığınız yeni harcamalar için faizsiz dönem hakkınız (grace period) o ay için kaybolur — yani dönem borcunun tamamını ödemediğinizde yalnızca eski borç değil, o ay yaptığınız yeni harcamalar da hesap kesim tarihinden itibaren faize tabi olur; bu, asgari ödemenin sanıldığından çok daha pahalıya patlamasının asıl sebebidir.",
+    ],
   },
   "npv-hesaplama": {
     faqs: [
       { q: "NPV (net bugünkü değer) nedir?", a: "Gelecekteki nakit akışlarının bugünkü değerinden başlangıç yatırımının düşülmesiyle bulunan tutardır: NPV = Σ CFₜ/(1+r)ᵗ − Yatırım. Paranın zaman değerini hesaba katarak projenin gerçekten kazandırıp kazandırmadığını gösterir." },
       { q: "NPV pozitifse ne anlama gelir?", a: "Proje, kullandığınız iskonto oranının (alternatif getirinin) üzerinde değer yaratıyor demektir ve finansal olarak kabul edilebilir. NPV negatifse aynı parayı alternatifte değerlendirmek daha kârlıdır." },
       { q: "İskonto oranını nasıl seçerim?", a: "Genellikle sermaye maliyeti ya da vazgeçilen en iyi alternatifin getirisi (örneğin mevduat veya tahvil faizi) kullanılır. Yüksek riskli projelerde oranı risk primi ekleyerek artırmak doğru olur." },
+    ],
+    detay: [
+      "Aynı proje, kullanılan iskonto oranına göre pozitif ya da negatif NPV verebilir — bu yüzden 'proje kârlı mı' sorusunun cevabı aslında 'hangi orana göre kârlı' sorusuna bağlıdır; iskonto oranını gerçekçi olmayan düşük seçmek, aslında zarar edecek bir projeyi kağıt üzerinde kârlı gösterebilir.",
     ],
   },
   "para-katlama-72": {
@@ -140,6 +177,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "72 kuralı ne kadar doğrudur?", a: "%6-%12 arası oranlarda oldukça isabetlidir; çok yüksek oranlarda sapma artar. Bu araç hem 72 kuralını hem de kesin logaritmik formülü (n = ln2 / ln(1+r)) birlikte gösterir." },
       { q: "Enflasyon paranın değerini kaç yılda yarıya indirir?", a: "Aynı kural tersine de çalışır: 72 ÷ enflasyon oranı ≈ satın alma gücünün yarıya inme süresi. %36 enflasyonda paranızın alım gücü yaklaşık 2 yılda yarılanır." },
     ],
+    detay: [
+      "72 sayısının bu kadar çok bölene (2, 3, 4, 6, 8, 9, 12) tam bölünebilmesi tesadüf değil, kuralın zihinden hızlı hesap yapılabilmesi için seçilmiş olmasıdır — %8 için 72/8=9 yıl, %6 için 72/6=12 yıl gibi kafadan çıkan sonuçlar, kuralın bu kadar yaygınlaşmasının asıl sebebidir.",
+    ],
   },
   "reel-getiri": {
     faqs: [
@@ -147,12 +187,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Neden nominal orandan enflasyonu doğrudan çıkaramıyoruz?", a: "Basit çıkarma (%50 − %45 = %5) yaklaşık sonuç verir ama bileşik etkiyi ihmal eder. Yüksek enflasyonda fark büyür; doğru yöntem Fisher formülüdür." },
       { q: "Mevduat enflasyona karşı koruyor mu?", a: "Mevduat faizi enflasyonun altındaysa reel getiri negatiftir — paranız nominal artsa da alım gücü düşer. Bu araçla yatırımınızın gerçekten kazandırıp kazandırmadığını görebilirsiniz." },
     ],
+    detay: [
+      "Basit çıkarma ile Fisher formülü arasındaki fark, oranlar büyüdükçe büyür — %10 nominal %8 enflasyonda ikisi de yaklaşık %2 verirken, %80 nominal %70 enflasyonda basit çıkarma %10 derken Fisher formülü %5,9 verir; yüksek enflasyonlu dönemlerde yalnızca doğru formülü kullanmak gerçek getiriyi görmenin tek yoludur.",
+    ],
   },
   "roi-hesaplama": {
     faqs: [
       { q: "ROI nedir, nasıl hesaplanır?", a: "Yatırım getiri oranıdır: ROI = (Net Kâr / Yatırım Maliyeti) × 100. Örneğin 100.000 ₺ yatırımdan 25.000 ₺ net kâr elde ettiyseniz ROI %25'tir." },
       { q: "İyi bir ROI kaçtır?", a: "Sektöre ve riske göre değişir; anlamlı kıyas, alternatif getiridir. ROI'niz risksiz mevduat getirisinin altındaysa yatırım finansal olarak zayıftır. Reklam kampanyalarında ise genellikle %100+ (2x) hedeflenir." },
       { q: "ROI ile ROAS arasındaki fark nedir?", a: "ROAS ciroyu harcamaya oranlar (Ciro/Harcama), ROI ise net kârı esas alır. ROAS 3x görünen bir kampanya, ürün maliyetleri düşülünce düşük hatta negatif ROI verebilir." },
+    ],
+    detay: [
+      "ROI hesabında zaman boyutu genellikle unutulur — 1 yılda %25 ROI ile 3 yılda %25 ROI birbirinden çok farklı performanslardır; yıllıklandırılmış ROI'ye çevirmeden farklı vadeli yatırımları doğrudan kıyaslamak yanlış sonuca götürür.",
     ],
   },
 
@@ -197,6 +243,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Hangi işlemler tevkifata tabidir?", a: "Yapım işleri, işgücü temini, temizlik-bakım hizmetleri, danışmanlık, servis taşımacılığı gibi Gelir İdaresi'nin tebliğle belirlediği hizmetler; ayrıca belirlenmiş alıcılara (kamu, bankalar vb.) yapılan teslimlerde uygulanır." },
       { q: "5/10 tevkifat ne demek?", a: "Faturadaki KDV'nin yarısını alıcı sorumlu sıfatıyla vergi dairesine öder, kalan yarısını satıcıya öder. Örneğin 1.000 ₺ + %20 KDV (200 ₺) faturada 5/10 tevkifatla satıcıya 1.100 ₺ ödenir, 100 ₺ alıcı tarafından beyan edilir." },
     ],
+    detay: [
+      "Tevkifata tabi bir işlemde satıcı, tevkif edilen KDV kısmını hiç görmese bile normal KDV beyannamesinde bu tutarı 'hesaplanan KDV' olarak göstermeye devam eder — yalnızca tahsilat kısmı eksik gelir, beyan yükümlülüğü değişmez; bu ayrımı gözden kaçırmak beyanname hatalarının sık nedenlerinden biridir.",
+    ],
   },
   "kira-geliri-vergisi": {
     howItWorks: [
@@ -220,6 +269,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Deri ürün için kaç m² deri gerekir?", a: "Ürünün kalıp alanı, fire payıyla (genellikle %15-%30) çarpılarak bulunur. Araç, parça ölçülerinden toplam deri ihtiyacını ve maliyeti hesaplar." },
       { q: "Deri neden feet kare (sqft) ile satılır?", a: "Uluslararası deri ticaretinde standart birim feet karedir (1 sqft ≈ 0,0929 m²). Araç m² ve sqft arasında otomatik dönüşüm yapar." },
     ],
+    detay: [
+      "Fire payı deri kalitesine göre büyük fark gösterir — birinci sınıf, düzgün ve az kusurlu bir deride fire %10-15'e inebilirken, ekonomik ve düzensiz kesimli derilerde parça çıkarma verimsizliği yüzünden fire %30'a kadar çıkabilir; maliyet hesabınızda kullandığınız deri kalitesine uygun fire oranını seçmek önemlidir.",
+    ],
   },
   "desi-kargo": {
     howItWorks: [
@@ -232,12 +284,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Kargo ücreti desiden mi kilodan mı hesaplanır?", a: "İkisinden büyük olanından. 10 desi ama 3 kg olan hafif-hacimli koli 10 desi üzerinden; 5 desi ama 8 kg olan yoğun koli 8 kg üzerinden ücretlendirilir." },
       { q: "Desiyi düşürmek için ne yapabilirim?", a: "Mümkün olan en küçük kutuyu kullanın ve boşlukları azaltın — çünkü ölçüler çarpım olarak etki eder; her kenardan birkaç cm kısalma toplam desiyi belirgin düşürür." },
     ],
+    detay: [
+      "Bazı kargo firmaları uluslararası gönderilerde 3000 yerine 5000 bölen kullanır (havayolu standardı) — yurt içi ve yurt dışı gönderimde aynı paketin desi değeri firmaya ve gönderim türüne göre farklı çıkabilir; fiyat teklifi alırken hangi bölenin kullanıldığını mutlaka sorun.",
+    ],
   },
   "eoq-siparis": {
     faqs: [
       { q: "EOQ (ekonomik sipariş miktarı) nedir?", a: "Sipariş verme maliyeti ile stok tutma maliyetinin toplamını en aza indiren sipariş büyüklüğüdür: EOQ = √(2 × Yıllık Talep × Sipariş Maliyeti / Birim Elde Tutma Maliyeti)." },
       { q: "EOQ ne işe yarar?", a: "Çok sık küçük sipariş vermek sipariş maliyetini, seyrek büyük sipariş vermek depo/stok maliyetini artırır. EOQ bu iki maliyeti dengeleyen optimum noktayı verir." },
       { q: "EOQ'nun varsayımları nelerdir?", a: "Talebin sabit ve bilinir olduğunu, tedarik süresinin değişmediğini ve birim fiyatın miktara göre değişmediğini varsayar. İskonto veya mevsimsellik varsa sonuç başlangıç noktası olarak kullanılmalıdır." },
+    ],
+    detay: [
+      "Kare kök içindeki formül yapısı nedeniyle talep 4 katına çıktığında EOQ yalnızca 2 katına çıkar — bu, büyüyen işletmelerin sipariş miktarını talep artışıyla orantılı değil, kareköküyle orantılı artırması gerektiği anlamına gelir; doğrudan orantılı artırım gereğinden fazla stok tutmaya yol açar.",
     ],
   },
   "fatura-hesaplama": {
@@ -250,12 +308,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "KDV ile stopaj aynı şey mi?", a: "Hayır — KDV alıcıdan tahsil edilip devlete ödenen tüketim vergisidir, faturaya eklenir. Stopaj ise gelir vergisinin peşin kesintisidir, tutardan düşülür ve alıcı tarafından vergi dairesine yatırılır." },
       { q: "E-fatura ve e-arşiv fatura farkı nedir?", a: "E-fatura yalnızca sisteme kayıtlı mükellefler arasında elektronik ortamda iletilir; e-arşiv fatura sisteme kayıtlı olmayan alıcılara (nihai tüketici dahil) kesilir ve e-posta/kağıt olarak iletilebilir." },
     ],
+    detay: [
+      "KDV faturaya eklenirken, stopaj faturadan düşülür — bu iki kalemin yönü zıttır ve aynı faturada bir arada göründüklerinde toplam tutar önce yükselip sonra düşer; tahsil edilecek net tutarı zihinden hesaplamaya çalışmak yerine bu aracın sırasıyla gösterdiği adımları takip etmek hata riskini azaltır.",
+    ],
   },
   "insaat-maliyet": {
     faqs: [
       { q: "İnşaat m² maliyeti nasıl hesaplanır?", a: "Toplam inşaat alanı, yapı sınıfına ait m² birim maliyetiyle çarpılır. Birim maliyet; kaba yapı, ince işçilik, tesisat ve işçiliği kapsar ve yapı kalitesine göre önemli ölçüde değişir." },
       { q: "Resmî birim maliyetler nereden bulunur?", a: "Çevre, Şehircilik ve İklim Değişikliği Bakanlığı her yıl 'Yapı Yaklaşık Birim Maliyetleri' tebliği yayımlar; ruhsat harçları ve sigorta bu değerler üzerinden hesaplanır. Piyasa maliyeti tebliğ değerinden farklı olabilir." },
       { q: "Kaba inşaat ile anahtar teslim fark nedir?", a: "Kaba inşaat (temel, betonarme, duvar, çatı) toplam maliyetin kabaca %40-50'sidir; ince işler (sıva, boya, zemin, mutfak-banyo, tesisat) kaliteye göre kalan kısmı oluşturur ve anahtar teslim maliyeti belirleyen esas kalemdir." },
+    ],
+    detay: [
+      "Resmî tebliğ birim maliyetleri sigorta ve harç hesaplarında kullanılmak üzere belirlenir, gerçek piyasa maliyetini yansıtması amaçlanmaz — malzeme fiyatlarındaki hızlı değişim döneminde piyasa maliyeti tebliğ değerinin belirgin üzerine çıkabilir; bütçe planlarken yalnızca resmî tabloya değil, güncel piyasa teklifine de bakın.",
     ],
   },
   "kar-marji-iskonto": {
@@ -268,6 +332,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Zincirleme (ardışık) iskonto nasıl hesaplanır?", a: "İndirimler toplanmaz, ardışık uygulanır: %20 + %10 iskonto toplam %30 değil, 1 − (0,80 × 0,90) = %28 eder. Araç ardışık indirimleri doğru şekilde zincirler." },
       { q: "Hedef kâr marjına göre satış fiyatı nasıl bulunur?", a: "Satış = Maliyet / (1 − hedef marj). %25 marj hedefiyle 100 ₺ maliyetli ürün 133,33 ₺'ye satılmalıdır — maliyete %25 eklemek (125 ₺) hedefin altında kalır." },
     ],
+    detay: [
+      "%100 markup, %50 kâr marjına eşittir ama %100 kâr marjı matematiksel olarak imkânsızdır (satış sonsuza gitmesi gerekir) — bu kavram karmaşası, satıcıların 'iki katına sattım, %100 kâr ettim' derken aslında %50 marjdan bahsettiğini fark etmemesine yol açar; iki terimi karıştırmamak fiyatlama kararlarında kritik önemdedir.",
+    ],
   },
   "reklam-metrikleri": {
     faqs: [
@@ -275,12 +342,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "İyi bir ROAS kaç olmalı?", a: "Kâr marjınıza bağlıdır: başabaş ROAS = 1 / kâr marjı. %25 marjlı üründe 4x altındaki ROAS zarar demektir; %50 marjda 2x yeterli olabilir." },
       { q: "CTR düşükse ne yapmalıyım?", a: "Görsel/başlık uyumunu, hedef kitle seçimini ve teklifin netliğini gözden geçirin. Sektöre göre değişmekle birlikte arama ağında %2+, görüntülü reklamda %0,5+ CTR makul kabul edilir." },
     ],
+    detay: [
+      "Yüksek CTR her zaman iyi haber değildir — tıklama çeken ama alaka düzeyi düşük bir reklam metni, çok sayıda tıklama getirir ama bu ziyaretçiler satın almadan çıkar (yüksek CTR + düşük dönüşüm); metrikleri tek tek değil, huninin tamamı (gösterim → tıklama → dönüşüm → kâr) üzerinden birlikte okumak gerekir.",
+    ],
   },
   "vade-farki-senet": {
     faqs: [
       { q: "Senet iskontosu nasıl hesaplanır?", a: "Vadesinden önce paraya çevrilen senetten, kalan gün için faiz düşülür: İskonto = Senet Bedeli × Yıllık Oran × Gün / 36500. Elinize senet bedelinden iskonto düşülmüş tutar geçer." },
       { q: "Vade farkı nedir?", a: "Peşin fiyat ile vadeli fiyat arasındaki, paranın zaman değerini yansıtan farktır. Satıcı, tahsilatı geciken parasının finansman maliyetini vade farkı olarak fiyata ekler." },
       { q: "İç iskonto ve dış iskonto farkı nedir?", a: "Dış iskonto senet bedeli üzerinden, iç iskonto ise bugünkü değer üzerinden hesaplanır. Bankalar genellikle dış iskonto kullanır; iç iskonto matematiksel olarak daha adildir." },
+    ],
+    detay: [
+      "Dış iskonto yöntemi bankalar için her zaman biraz daha kârlıdır çünkü faiz, gelecekteki (daha büyük) senet bedeli üzerinden değil bugünkü bedel üzerinden hesaplanmalıyken dış iskontoda senet bedelinin tamamı üzerinden hesaplanır — aradaki fark küçük görünse de yüksek tutarlı ve uzun vadeli senetlerde belirgin hale gelir.",
     ],
   },
 
@@ -305,6 +378,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Kredi alırken hayat sigortası zorunlu mu?", a: "Yasal olarak zorunlu değildir ancak bankalar kredi güvencesi olarak talep edebilir. İstediğiniz sigorta şirketinden yaptırma hakkınız vardır — bankanın anlaşmalı şirketiyle sınırlı değilsiniz." },
       { q: "Vefat teminatı tutarı nasıl seçilmeli?", a: "Yaygın yaklaşım, yıllık gelirinizin 5-10 katı veya geride kalanların borçlar + birkaç yıllık yaşam giderini karşılayacak tutardır. Kredi bağlantılı poliçelerde teminat en az kalan borç kadar olmalıdır." },
     ],
+    detay: [
+      "Bankanın sunduğu kredi bağlantılı hayat sigortasını kabul etmek zorunda değilsiniz — dışarıdan aynı teminatı genellikle daha düşük primle sağlayan bir poliçe bulup bankaya 'dain-i mürtehin' (alacaklı) olarak işletmesini isteyebilirsiniz; bu hak çoğu zaman satış temsilcileri tarafından hatırlatılmaz.",
+    ],
   },
   "kasko-tahmin": {
     faqs: [
@@ -322,12 +398,18 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Schengen vizesi için sigorta şartı nedir?", a: "Schengen başvurularında en az 30.000 € teminatlı, tüm Schengen bölgesinde geçerli ve seyahat süresini kapsayan sağlık sigortası zorunludur." },
       { q: "Prim neye göre değişir?", a: "Yaş, seyahat süresi, gidilen bölge ve teminat limitine göre belirlenir. 65 yaş üstünde prim belirgin artar; yıllık çok girişli poliçeler sık seyahat edenler için daha ekonomiktir." },
     ],
+    detay: [
+      "Kredi kartınıza bağlı 'ücretsiz' seyahat sigortası genellikle yalnızca kartla bilet/tur satın alındığında ve sınırlı bir teminat tutarıyla geçerlidir — Schengen vizesi başvurusunda istenen 30.000 € limitini karşılamayabilir; başvuru öncesi kart sigortanızın poliçe şartlarını mutlaka kontrol edin, son anda ek poliçe almak zorunda kalmayın.",
+    ],
   },
   "trafik-basamak": {
     faqs: [
       { q: "Trafik sigortası basamak sistemi nasıl çalışır?", a: "7 basamaklı sistemde herkes 4. basamaktan başlar. Hasarsız her yıl bir basamak yükselir (en yüksek 7: yaklaşık %50 indirim); kusurlu hasarda basamak düşer ve prim yükselir (en düşük 1: %50 sürprim)." },
       { q: "Hasar yaparsam basamağım ne kadar düşer?", a: "Kusurlu her hasar ihbarı basamağınızı bir düşürür. Örneğin 7. basamaktaki sürücü bir hasarla 6'ya iner; yeniden yükselmek için bir yıl hasarsız geçirmesi gerekir." },
       { q: "Basamağım araca mı bana mı bağlı?", a: "Basamak sürücüye değil sigorta ettirene (araç sahibine) bağlıdır ve araç değişiminde korunur. Aracı satarsanız yeni aracınızda kademeniz devam eder." },
+    ],
+    detay: [
+      "Basamak sisteminin araca değil kişiye bağlı olması, ikinci el araç alırken bir avantaj sağlar — uzun süredir hasarsız kademede olan biri yeni aldığı arabada da yüksek indirimden yararlanmaya devam eder; ancak bu kademe başkasına devredilemez, yalnızca poliçe sahibinin kendi geçmişini takip eder.",
     ],
   },
 };
