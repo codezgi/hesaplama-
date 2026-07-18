@@ -14,6 +14,10 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Basit faiz ile bileşik faiz arasındaki fark nedir?", a: "Basit faizde faiz her dönem yalnızca anaparaya işler; bileşik faizde kazanılan faiz anaparaya eklenir ve sonraki dönemde faiz de faiz kazanır. Uzun vadede bileşik faiz belirgin şekilde daha fazla getiri sağlar." },
       { q: "Mevduat faizi basit faiz midir?", a: "Tek seferlik, vadesi sonunda bozulan mevduat basit faizle hesaplanır. Vade sonunda faizle birlikte yeniden yatırırsanız (temdit), bileşik etki elde edersiniz." },
     ],
+    detay: [
+      "36500 sayısı ilk bakışta garip görünse de basitçe 365 gün × 100 (yüzde çevirimi) demektir — formülü ezberlemek yerine 'yıllık faizi 365'e bölüp gün sayısıyla çarp, sonra yüzdeye çevir' mantığıyla hatırlamak daha kalıcıdır.",
+      "Banka broşürlerinde 'yıllık %48 faiz' yazsa da bu, paranızı tam 365 gün bekletmeniz halinde elde edeceğiniz tutardır; 32 günlük kısa vadeli mevduatta gerçek getiri, ilan edilen orana göre çok daha küçük bir kesirdir — bu araç bu karışıklığı gün sayısını doğrudan işleme sokarak önler.",
+    ],
   },
   "bes-devlet-katkisi": {
     howItWorks: [
@@ -163,6 +167,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Kira sözleşmesinde damga vergisi ne kadar?", a: "Kira sözleşmeleri, sözleşme süresine göre toplam kira bedeli üzerinden binde 1,89 oranında damga vergisine tabidir. Konut kiralarında kiracı gerçek kişiyse istisna uygulanır." },
       { q: "Damga vergisini kim öder?", a: "Kural olarak kağıdı imzalayanlar müteselsilen sorumludur; uygulamada taraflar sözleşmeyle paylaşımı belirler. Resmî dairelerle yapılan işlemlerde vergi genellikle diğer tarafça ödenir." },
     ],
+    detay: [
+      "Aynı sözleşmede birden fazla nüsha imzalanıyorsa her bir nüsha ayrı ayrı damga vergisine tabidir — iki nüsha halinde imzalanan bir kira kontratında vergi tek nüshaya göre değil, toplam nüsha sayısına göre hesaplanabilir; bu detay özellikle kurumsal sözleşmelerde gözden kaçar.",
+    ],
   },
   "emlak-vergisi": {
     howItWorks: [
@@ -174,6 +181,10 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Emlak vergisi oranları nedir?", a: "Normal belediyelerde konut binde 1, iş yeri binde 2, arsa binde 3, arazi binde 1'dir. Büyükşehir belediyesi sınırlarında bu oranlar iki katı uygulanır (konut binde 2 vb.)." },
       { q: "Emlak vergisi ne zaman ödenir?", a: "İki eşit taksitte ödenir: birinci taksit Mart-Mayıs, ikinci taksit Kasım ayı içinde. Belediyenize giderek veya e-belediye üzerinden ödeyebilirsiniz." },
       { q: "Emlak vergisinden kimler muaf?", a: "Tek konutu olan emekliler, ev hanımları, işsizler, engelliler, gaziler ve şehit yakınları belirli şartlarla (konutun 200 m²'yi aşmaması vb.) sıfır oranlı vergiden yararlanır." },
+    ],
+    detay: [
+      "Rayiç bedel, gerçek satış fiyatınız değildir — belediyenin her yıl ilan ettiği emlak vergisi değeridir ve genellikle piyasa fiyatının altında kalır; bu yüzden tapuda beyan ettiğiniz satış bedeli ile emlak vergisi matrahı aynı tutar değildir, ikisini karıştırmak yaygın bir hatadır.",
+      "Beş yılda bir yapılan asgari ölçüde arsa birim değeri artışları dışında, emlak vergisi değeri her yıl bir önceki yılın yeniden değerleme oranının yarısı kadar otomatik artar — yani bina fiziksel olarak hiç değişmese bile vergi matrahınız her yıl kendiliğinden yükselir.",
     ],
   },
   "kdv-tevkifat": {
@@ -196,6 +207,10 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Kira geliri vergisi nasıl hesaplanır?", a: "Brüt kiradan istisna (konutlarda yıllık istisna tutarı) düşülür, kalan tutardan götürü (%15) veya belgeli gerçek giderler indirilir; kalan matraha artan oranlı gelir vergisi tarifesi (%15'ten başlar) uygulanır." },
       { q: "Götürü gider mi gerçek gider mi seçmeliyim?", a: "Kredi faizi, sigorta, bakım-onarım gibi belgeli gideriniz kiranın %15'ini aşıyorsa gerçek gider avantajlıdır; aksi halde belge derdi olmayan götürü gider pratiktir. Götürüyü seçen 2 yıl vazgeçemez." },
       { q: "Kira beyannamesi ne zaman verilir?", a: "Bir önceki yıla ait kira gelirleri Mart ayında beyan edilir; vergi Mart ve Temmuz'da iki taksitte ödenir. Beyan, Hazır Beyan Sistemi üzerinden online yapılabilir." },
+    ],
+    detay: [
+      "Konut kira istisnası yalnızca bir kez, en yüksek gelirden düşülür — birden fazla konutu kirada olan biri istisnayı her konut için ayrı ayrı değil, toplam konut kira gelirinin tamamı için bir kez uygulayabilir; işyeri kira gelirlerinde ise böyle bir istisna yoktur.",
+      "İstisna haddini aşan ama beyan etmeyenlere vergi dairesi, kiracının ödediği kira üzerinden yaptığı stopaj beyanlarını çapraz kontrol ederek ulaşabilir — kiracı işyeri veya kurumsal kiracıysa ödediği kiradan zaten stopaj kesip beyan etmek zorundadır, bu da ev sahibinin gelirinin sistemde görünür olmasına yol açar.",
     ],
   },
 
@@ -280,6 +295,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "DASK primi neye göre değişir?", a: "Konutun yüzölçümü, yapı tarzı (betonarme/diğer), bina yaşı, kat sayısı ve bulunduğu deprem risk bölgesine göre belirlenir. Riskli bölgede eski ve büyük konutların primi daha yüksektir." },
       { q: "DASK neleri karşılar, neleri karşılamaz?", a: "Depremin ve deprem kaynaklı yangın, patlama, tsunami ile yer kaymasının binada yarattığı maddi hasarı teminat limitine kadar karşılar. Eşyalar, kira kaybı ve bedeni zararlar kapsam dışıdır — bunlar için konut sigortası gerekir." },
     ],
+    detay: [
+      "DASK poliçesi olmayan bir konutta deprem hasarı meydana gelirse, devlet o binanın hasarını kamu kaynağından karşılamaz — bu, sistemin kurulma amacının tam da tersidir; poliçesiz konut sahipleri kendi imkanlarıyla baş başa kalır, bu yüzden yıllık birkaç yüz liralık prim gerçek bir güvence maliyeti sayılmalıdır.",
+    ],
   },
   "hayat-sigortasi": {
     faqs: [
@@ -293,6 +311,9 @@ export const paraContent: Record<string, SeoExtra> = {
       { q: "Kasko primi neye göre hesaplanır?", a: "Aracın kasko değeri (TSB değer listesi), sürücünün yaşı ve hasarsızlık kademesi, aracın yaşı, il ve teminat kapsamına göre belirlenir. Prim kabaca araç değerinin %2-6'sı aralığında oluşur." },
       { q: "Kasko ile trafik sigortası farkı nedir?", a: "Trafik sigortası zorunludur ve yalnızca karşı tarafa verdiğiniz zararı öder; kasko isteğe bağlıdır ve kendi aracınızın hasarını (çarpma, çalınma, yanma, doğal afet) karşılar." },
       { q: "Hasarsızlık indirimi nasıl işler?", a: "Hasarsız geçen her yıl prim indirimi kademeniz artar (şirketlere göre %30-65'e kadar). Hasar dosyası açtırmak kademeyi düşürür; küçük hasarları cepten karşılamak bazen uzun vadede daha ekonomiktir." },
+    ],
+    detay: [
+      "Küçük bir çizik veya tampon hasarı için kasko dosyası açmadan önce şunu hesaplayın: hasarsızlık indiriminizin düşmesiyle önümüzdeki 2-3 yıl ödeyeceğiniz ekstra prim, çoğu zaman hasarın kendisini cepten onarım maliyetinden yüksek çıkar — bu yüzden düşük tutarlı hasarlarda sigortayı hiç kullanmamak sıklıkla daha ekonomiktir.",
     ],
   },
   "seyahat-sigortasi": {

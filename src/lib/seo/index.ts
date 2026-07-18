@@ -5,6 +5,7 @@ import { saglikContent } from "./saglik";
 import { egitimBilimContent } from "./egitim-bilim";
 import { gunlukContent } from "./gunluk";
 import { evTeknikContent } from "./ev-teknik";
+import { oncelikliContent } from "./oncelikli";
 
 export type { SeoExtra };
 
@@ -16,4 +17,5 @@ export const seoContent: Record<string, SeoExtra> = {
   ...egitimBilimContent,
   ...gunlukContent,
   ...evTeknikContent,
+  ...oncelikliContent,
 };

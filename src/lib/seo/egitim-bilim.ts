@@ -13,6 +13,9 @@ export const egitimBilimContent: Record<string, SeoExtra> = {
       { q: "AYT'de baraj kaç puandır?", a: "Güncel sistemde puan barajı kaldırılmıştır; tercih yapabilmek için sınava girmiş olmak yeterlidir. Programların kendi başarı sırası şartları (tıp, hukuk, mühendislik vb.) ise devam etmektedir." },
       { q: "OBP yerleştirmeye nasıl etki eder?", a: "Ortaöğretim başarı puanı (diploma notu × 5) 0,12 katsayısıyla eklenir — 100 diploma notu, yerleştirmeye 60 puan katkı demektir." },
     ],
+    detay: [
+      "Yanlış cevabın doğruyu 1/4 oranında götürmesi, rastgele işaretlemeyi mantıksız kılmak için tasarlanmıştır — 4 şıklı bir soruda rastgele işaretleyen adayın beklenen neti istatistiksel olarak sıfıra yakınsar, bu yüzden hiç bilmediğiniz soruları boş bırakmak ile rastgele işaretlemek ortalamada aynı sonucu verir; yalnızca eleyebildiğiniz sorularda tahmin mantıklıdır.",
+    ],
   },
   "dgs-puan": {
     faqs: [
@@ -48,6 +51,9 @@ export const egitimBilimContent: Record<string, SeoExtra> = {
       { q: "KPSS P3 puanı nedir?", a: "Lisans mezunlarının genel yetenek + genel kültür oturumundan hesaplanan temel puandır; B grubu kadrolara (memurluk) yerleştirmede kullanılır. P93 ön lisans, P94 lise mezunlarının karşılığıdır." },
       { q: "KPSS'de kaç net kaç puan eder?", a: "Puan, o yılki ortalama ve standart sapmaya bağlı olduğundan sabit bir karşılık yoktur; kabaca 50-55 net 75-80 puana denk gelir. Araç son yılların istatistikleriyle tahmin üretir." },
       { q: "KPSS puanı kaç yıl geçerli?", a: "Lisans düzeyi KPSS puanları iki yıl (sınav dönemine göre), ön lisans/lise puanları da sonraki sınava kadar geçerlidir. A grubu kadrolarda kurumlar güncel puan isteyebilir." },
+    ],
+    detay: [
+      "İki adayın ham neti aynı olsa bile farklı yıllarda aldıkları puan birbirinden farklı olabilir, çünkü standart puan sınavın o yılki genel zorluğuna ve katılımcı ortalamasına göre bağıl olarak hesaplanır — 'geçen yıl bu netle şu puanı almıştım' kıyası her yıl için geçerli bir referans değildir.",
     ],
   },
   "lgs-puan": {

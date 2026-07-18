@@ -14,6 +14,10 @@ export const isHukukContent: Record<string, SeoExtra> = {
       { q: "Yıllık fazla mesai sınırı nedir?", a: "İş Kanunu'na göre fazla çalışma yılda 270 saati aşamaz ve işçinin her yıl yazılı onayı alınmalıdır. Sınırın aşılması işçiye haklı fesih imkânı verebilir." },
       { q: "Fazla mesai yerine izin kullanabilir miyim?", a: "Evet — işçi isterse zamlı ücret yerine serbest zaman kullanabilir: her fazla saat için 1,5 saat izin. Bu tercihi işçi yapar, işveren dayatamaz." },
     ],
+    detay: [
+      "225 sayısı rastgele değildir — ayda ortalama 30 gün, günde 7,5 saat çalışma esasına dayanan İş Kanunu'ndaki standart hesap yöntemidir (30 × 7,5). Bazı işyerlerinde farklı bir bölen kullanıldığını görürseniz bordronuzu bu standart değerle karşılaştırıp fark olup olmadığını kontrol edin.",
+      "Fazla çalışma ile fazla sürelerle çalışma farklı kavramlardır: haftalık 45 saati aşan çalışma 'fazla çalışma' (zam %50), haftalık çalışma süresi 45 saatin altında belirlenmiş işyerlerinde 45 saate kadar olan ek çalışma 'fazla sürelerle çalışma' sayılır ve zam oranı %25'tir — bordronuzda hangi kalemin uygulandığını ayırt etmek önemlidir.",
+    ],
   },
   "yillik-izin": {
     howItWorks: [

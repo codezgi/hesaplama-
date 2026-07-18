@@ -46,6 +46,7 @@ export default async function HesaplamaPage({
   const extra = seoContent[calc.slug];
   const faqs = calc.faqs?.length ? calc.faqs : extra?.faqs;
   const howItWorks = calc.howItWorks?.length ? calc.howItWorks : extra?.howItWorks;
+  const detay = extra?.detay;
 
   const SITE = "https://hesaplamamerkezi.com";
   const url = `${SITE}/hesaplama/${calc.slug}`;
@@ -200,6 +201,18 @@ export default async function HesaplamaPage({
                 </summary>
                 <p className="mt-3 text-text-muted">{f.a}</p>
               </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Detaylı bilgi / uzman notu */}
+      {detay && detay.length > 0 && (
+        <section className="mt-10">
+          <h2 className="mb-4 text-lg font-bold text-text">Detaylı Bilgi</h2>
+          <div className="space-y-4 text-text-muted leading-relaxed">
+            {detay.map((p, i) => (
+              <p key={i}>{p}</p>
             ))}
           </div>
         </section>

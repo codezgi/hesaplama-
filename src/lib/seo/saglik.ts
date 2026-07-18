@@ -12,6 +12,10 @@ export const saglikContent: Record<string, SeoExtra> = {
       { q: "İdeal kilom neden tek bir sayı değil?", a: "Sağlıklı kilo bir aralıktır — BMI 18,5-24,9 arası normal kabul edilir. Kas oranı, kemik yapısı ve yaş kişisel farklar yaratır; formüller yalnızca referans noktasıdır." },
       { q: "Sporcularda ideal kilo formülleri geçerli mi?", a: "Sınırlı geçerlidir — kas dokusu yağdan ağır olduğu için kaslı kişilerde formüller ve BMI olduğundan kilolu gösterebilir. Vücut yağ oranı ölçümü daha doğru bir göstergedir." },
     ],
+    detay: [
+      "Devine formülü aslında ilaç dozajı hesaplamak için 1974'te geliştirildi, genel halk için estetik bir 'ideal kilo' rehberi olarak tasarlanmadı — bugün yaygın kullanılmasının sebebi pratikliğidir, ama kemik yapısı geniş veya dar olan bireylerde birkaç kilo sapma göstermesi normaldir.",
+      "162 cm altındaki boylarda formül matematik olarak negatif veya anlamsız sonuç verebilir çünkü '60 inçin altı' için düzeltme terimi eksi değere döner — bu araç bu sınır durumunu ayrıca ele alır, ama elle hesaplarken bu tuzağa dikkat edin.",
+    ],
   },
   "vucut-yag-orani": {
     howItWorks: [
@@ -34,6 +38,9 @@ export const saglikContent: Record<string, SeoExtra> = {
       { q: "Çay ve kahve su yerine geçer mi?", a: "Kısmen — kafeinli içecekler de sıvı dengesine katkı sağlar, ancak hafif idrar söktürücü etkileri vardır. Günlük sıvının ağırlıklı kısmını su oluşturmalıdır." },
       { q: "Fazla su içmek zararlı olabilir mi?", a: "Aşırı ve hızlı su tüketimi nadiren de olsa sodyum düşüklüğüne (hiponatremi) yol açabilir. Böbrek ve kalp hastaları hekimlerinin önerdiği sıvı kısıtlamasına uymalıdır." },
     ],
+    detay: [
+      "'Günde 8 bardak su' kuralı aslında bilimsel bir kaynağa dayanmaz — 1945'te bir tavsiyede geçen 'yiyeceklerden alınanlar dahil 2,5 litre' ifadesi zamanla 'sadece içme suyundan 8 bardak' şeklinde yanlış aktarılmıştır; yediğiniz sebze-meyve ve çorbalar da günlük su ihtiyacınıza katkı sağlar.",
+    ],
   },
   "protein-ihtiyaci": {
     howItWorks: [
@@ -44,6 +51,9 @@ export const saglikContent: Record<string, SeoExtra> = {
       { q: "Günlük protein ihtiyacım ne kadar?", a: "Hareketsiz yetişkinlerde 0,8 g/kg yeterlidir; düzenli egzersiz yapanlarda 1,2-1,6 g/kg, yoğun kuvvet antrenmanı ve kas kazanımında 1,6-2,2 g/kg önerilir. 80 kg sporcunun ihtiyacı 130-175 g civarındadır." },
       { q: "Fazla protein zararlı mı?", a: "Sağlıklı böbreklere sahip kişilerde 2 g/kg'a kadar alımın zararı gösterilmemiştir. Böbrek hastalığı olanlar mutlaka hekim kontrolünde protein alımını ayarlamalıdır." },
       { q: "Proteinleri gün içine nasıl dağıtmalıyım?", a: "Kas protein sentezi için öğün başına 20-40 g, günde 3-5 öğüne dağıtım tek seferde yüklemeye göre daha etkilidir. Antrenman sonrası 2 saat içinde protein almak faydalıdır." },
+    ],
+    detay: [
+      "Kilo verme döneminde protein ihtiyacı aslında normalden düşmez, tam tersine artırılması önerilir (1,6-2,2 g/kg) — çünkü kalori açığında vücut enerji ihtiyacını kaslardan karşılamaya meyillidir; yüksek protein alımı bu kas kaybını sınırlayan en güçlü tek besin stratejisidir.",
     ],
   },
   "bel-kalca-orani": {
