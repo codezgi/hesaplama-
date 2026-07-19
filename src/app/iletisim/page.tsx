@@ -25,25 +25,25 @@ export default function IletisimPage() {
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <a
-          href="mailto:destek@xn--hesaplarm-2pb.com"
+          href="mailto:alperencangilic@hotmail.com"
           className="card group flex items-start gap-4 p-5 transition-colors hover:border-primary/40"
         >
           <Mail className="h-6 w-6 shrink-0 text-primary" />
           <div>
             <h3 className="font-semibold text-text group-hover:text-primary">Genel iletişim</h3>
-            <p className="mt-1 text-sm text-text-muted">destek@xn--hesaplarm-2pb.com</p>
+            <p className="mt-1 text-sm text-text-muted">alperencangilic@hotmail.com</p>
             <p className="mt-2 text-xs text-text-muted">Reklam işbirlikleri, kurumsal talepler ve genel sorular.</p>
           </div>
         </a>
 
         <a
-          href="mailto:hata@xn--hesaplarm-2pb.com"
+          href="mailto:alperencangilic@hotmail.com"
           className="card group flex items-start gap-4 p-5 transition-colors hover:border-primary/40"
         >
           <Bug className="h-6 w-6 shrink-0 text-primary" />
           <div>
             <h3 className="font-semibold text-text group-hover:text-primary">Hata bildirimi</h3>
-            <p className="mt-1 text-sm text-text-muted">hata@xn--hesaplarm-2pb.com</p>
+            <p className="mt-1 text-sm text-text-muted">alperencangilic@hotmail.com</p>
             <p className="mt-2 text-xs text-text-muted">
               Bir hesaplayıcının sonucu yanlış ise: sayfa adı, girdiğin değerler ve beklediğin sonucu paylaş.
             </p>
@@ -51,13 +51,13 @@ export default function IletisimPage() {
         </a>
 
         <a
-          href="mailto:oneri@xn--hesaplarm-2pb.com"
+          href="mailto:alperencangilic@hotmail.com"
           className="card group flex items-start gap-4 p-5 transition-colors hover:border-primary/40 sm:col-span-2"
         >
           <Lightbulb className="h-6 w-6 shrink-0 text-primary" />
           <div>
             <h3 className="font-semibold text-text group-hover:text-primary">Yeni hesaplayıcı önerisi</h3>
-            <p className="mt-1 text-sm text-text-muted">oneri@xn--hesaplarm-2pb.com</p>
+            <p className="mt-1 text-sm text-text-muted">alperencangilic@hotmail.com</p>
             <p className="mt-2 text-xs text-text-muted">
               Aradığın bir hesap listede yoksa, kısaca anlat — hesaplama.net paritesine ilerlerken önerileri değerlendiriyoruz.
             </p>
