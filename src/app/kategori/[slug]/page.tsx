@@ -41,7 +41,7 @@ export default async function KategoriPage({
   const Icon = cat.icon;
   const intro = categoryIntros[slug];
 
-  const SITE = "https://hesaplamamerkezi.com";
+  const SITE = "https://xn--hesaplarm-2pb.com";
   const url = `${SITE}/kategori/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",

@@ -48,7 +48,7 @@ export default async function HesaplamaPage({
   const howItWorks = calc.howItWorks?.length ? calc.howItWorks : extra?.howItWorks;
   const detay = extra?.detay;
 
-  const SITE = "https://hesaplamamerkezi.com";
+  const SITE = "https://xn--hesaplarm-2pb.com";
   const url = `${SITE}/hesaplama/${calc.slug}`;
 
   const jsonLd = {

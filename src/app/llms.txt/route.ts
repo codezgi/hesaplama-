@@ -5,7 +5,7 @@
 import { calculators } from "@/lib/calculators";
 import { categories } from "@/lib/categories";
 
-const BASE = "https://hesaplamamerkezi.com";
+const BASE = "https://xn--hesaplarm-2pb.com";
 
 export const dynamic = "force-static";
 

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://hesaplamamerkezi.com";
+const BASE = "https://xn--hesaplarm-2pb.com";
 
 /**
  * robots.txt — genel arama motorları + yapay zeka botları için izinler.

@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hesaplamamerkezi.com"),
+  metadataBase: new URL("https://xn--hesaplarm-2pb.com"),
   title: {
     default: "Hesaplama Merkezi — Maaş, KDV, Kredi, Döviz ve 100+ Hesaplama",
     template: "%s | Hesaplama Merkezi",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Hesaplama Merkezi",
     title: "Hesaplama Merkezi — Türkiye'nin En Kapsamlı Hesaplama Aracı",
     description: "Maaş, KDV, kredi, döviz, altın ve 100+ hesaplayıcı. Canlı TCMB kurları.",
-    url: "https://hesaplamamerkezi.com",
+    url: "https://xn--hesaplarm-2pb.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -70,19 +70,19 @@ const siteJsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://hesaplamamerkezi.com/#website",
-      url: "https://hesaplamamerkezi.com",
+      "@id": "https://xn--hesaplarm-2pb.com/#website",
+      url: "https://xn--hesaplarm-2pb.com",
       name: "Hesaplama Merkezi",
       description:
         "Maaş, KDV, kredi, döviz, sağlık, eğitim ve 240+ ücretsiz online hesaplama aracı.",
       inLanguage: "tr-TR",
-      publisher: { "@id": "https://hesaplamamerkezi.com/#organization" },
+      publisher: { "@id": "https://xn--hesaplarm-2pb.com/#organization" },
     },
     {
       "@type": "Organization",
-      "@id": "https://hesaplamamerkezi.com/#organization",
+      "@id": "https://xn--hesaplarm-2pb.com/#organization",
       name: "Hesaplama Merkezi",
-      url: "https://hesaplamamerkezi.com",
+      url: "https://xn--hesaplarm-2pb.com",
     },
   ],
 };
