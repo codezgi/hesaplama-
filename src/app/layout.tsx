@@ -87,6 +87,9 @@ const siteJsonLd = {
   ],
 };
 
+// Google AdSense yayıncı kimliği — reklam script'i ve ad unit'lerde kullanılır
+export const ADSENSE_CLIENT = "ca-pub-7028188172062089";
+
 // Tema flash'ını (FOUC) önlemek için render öncesi çalışan script
 const themeScript = `
 (function() {
@@ -109,6 +112,12 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
+        {/* Google AdSense — site doğrulama ve reklam sunumu */}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
         />
       </head>
       <body className="min-h-full flex flex-col">
